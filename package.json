@@ -41,7 +41,7 @@
     "minor":"npm run lint && npm version minor",
     "major":"npm run lint && npm version major",
     "jsx":"npm run lint && gulp && ./node_modules/.bin/uglifyjs index.js > dist/react-iframe.min.js",
-    "up":"npm run jsx && sh bin/authors && git commit -am \"`npm view . version`\" --allow-empty && npm release patch && git push --tags origin HEAD:master && npm publish"
+    "up":"npm run jsx && sh bin/authors && git commit -am \"Service release\" --allow-empty && npm release patch && git push --tags origin HEAD:master && npm publish"
 
   },
   "license": "ISC"
