@@ -1,6 +1,6 @@
 {
   "name": "react-iframe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Iframes with react",
   "main": "index.js",
   "dependencies": {},
@@ -36,13 +36,12 @@
   },
   "scripts": {
     "demo": "./node_modules/.bin/beefy demo/index.js --open -- -t reactify",
-    "lint":"./node_modules/.bin/eslint index.jsx",
-    "patch":"npm run lint && npm version patch",
-    "minor":"npm run lint && npm version minor",
-    "major":"npm run lint && npm version major",
-    "jsx":"npm run lint && gulp && ./node_modules/.bin/uglifyjs index.js > dist/react-iframe.min.js",
-    "up":"npm run jsx && sh bin/authors && git commit -am \"Service release\" --allow-empty && npm release patch && git push --tags origin HEAD:master && npm publish"
-
+    "lint": "./node_modules/.bin/eslint index.jsx",
+    "patch": "npm run lint && npm version patch",
+    "minor": "npm run lint && npm version minor",
+    "major": "npm run lint && npm version major",
+    "jsx": "npm run lint && gulp && ./node_modules/.bin/uglifyjs index.js > dist/react-iframe.min.js",
+    "up": "npm run jsx && sh bin/authors && git commit -am \"Service release\" --allow-empty && npm release patch && git push --tags origin HEAD:master && npm publish"
   },
   "license": "ISC"
 }
