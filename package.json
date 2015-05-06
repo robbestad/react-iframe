@@ -1,0 +1,38 @@
+{
+  "name": "react-iframe",
+  "version": "0.0.1",
+  "description": "Iframes with react",
+  "main": "index.js",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^0.13.x"
+  },
+  "devDependencies": {
+    "babel-eslint": "^2.0.2",
+    "eslint": "^0.17.1",
+    "eslint-plugin-react": "^1.6.0",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^4.0.0",
+    "gulp-jsx": "^0.9.0",
+    "gulp-rename": "^1.2.0",
+    "uglify-js": "^2.4.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:svenanders/react-iframe.git"
+  },
+  "homepage": "https://github.com/svenanders/react-iframe",
+  "keywords": [
+    "react",
+    "react-component",
+    "iframe",
+    "component"
+  ],
+  "author": {
+    "name": "Sven Anders Robbestad",
+    "email": "anders@robbestad.com",
+    "url": "http://www.robbestad.com"
+  },
+  "scripts": {},
+  "license": "ISC"
+}
