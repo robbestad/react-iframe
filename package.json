@@ -15,7 +15,8 @@
     "gulp-babel": "^4.0.0",
     "gulp-jsx": "^0.9.0",
     "gulp-rename": "^1.2.0",
-    "uglify-js": "^2.4.20"
+    "uglify-js": "^2.4.20",
+    "reactify": "^0.15.2"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,15 @@
     "email": "anders@robbestad.com",
     "url": "http://www.robbestad.com"
   },
-  "scripts": {},
+  "scripts": {
+    "demo": "./node_modules/.bin/beefy demo/index.js --open -- -t reactify",
+    "lint":"./node_modules/.bin/eslint index.jsx",
+    "patch":"npm run lint && npm version patch",
+    "minor":"npm run lint && npm version minor",
+    "major":"npm run lint && npm version major",
+    "jsx":"npm run lint && gulp && ./node_modules/.bin/uglifyjs index.js > dist/react-iframe.min.js",
+    "up":"npm run jsx && sh bin/authors && git commit -am \"`npm view . version`\" --allow-empty && npm release patch && git push --tags origin HEAD:master && npm publish"
+
+  },
   "license": "ISC"
 }
