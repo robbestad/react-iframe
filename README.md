@@ -6,7 +6,7 @@ Simple React component for including an iframed page.
 
     var Iframe = require("react-iframe");
 
-    <Iframe src="http://www.example.com" [string width, [string height]] />
+    <Iframe url="http://www.example.com" [string width, [string height]] />
 
 Optional properties width and height can be sent as either percentage (eg. '100%') or px (eg. '100px');
 
