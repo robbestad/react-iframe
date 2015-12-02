@@ -12,7 +12,8 @@ var Iframe = React.createClass({
     getDefaultProps:function(){
         return {
         height:'100%',
-        width:'100%'
+        width:'100%',
+        position:'fixed'
         }
     },
 
@@ -25,7 +26,7 @@ var Iframe = React.createClass({
             <iframe ref="iframe"
             frameBorder='0' 
             src={this.props.url}
-            style={{position:'fixed',height:this.props.height,width:this.props.width}}
+            style={{position:this.props.position,height:this.props.height,width:this.props.width}}
             height={this.props.height} width={this.props.width}></iframe>
         )
 
