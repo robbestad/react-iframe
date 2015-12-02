@@ -24,11 +24,15 @@ jsx:
 	gulp	
 	@$(uglify) index.js > dist/react-iframe.min.js
 
-publish:
+prepublish:
 	@$(call jsx)
 	@(sh bin/authors)
 	@$(uglify) index.js > dist/react-iframe.min.js
+
+commit:
 	git commit -am "`npm view . version`" --allow-empty
+
+publish:
 	@$(call release,patch)
 	git push --tags origin HEAD:master
 	npm publish
