@@ -2,7 +2,7 @@
 
 Simple React component for including an iframed page.
 
-![screenshot.png](Youtube in an iframe)
+![Youtube in an iframe](screenshot.png)
 
 ## Usage
 
