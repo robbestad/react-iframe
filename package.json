@@ -3,8 +3,9 @@
   "version": "0.0.4",
   "description": "Iframes with react",
   "main": "index.js",
-  "dependencies": {},
   "peerDependencies": {
+    "create-react-class": "^15.5.1",
+    "prop-types": "^15.5.6",
     "react": ">=0.13.x"
   },
   "devDependencies": {
