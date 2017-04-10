@@ -2,6 +2,8 @@
 
 Simple React component for including an iframed page.
 
+![screenshot.png](Youtube in an iframe)
+
 ## Usage
 
     const Iframe = require("react-iframe");
