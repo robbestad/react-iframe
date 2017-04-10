@@ -1,12 +1,14 @@
 "use strict";
 var React = require("react");
-var Iframe = React.createClass({
+var createReactClass = require("create-react-class");
+var PropTypes = require("prop-types");
+var Iframe = createReactClass({
     displayName: "React-Iframe",
 
     propTypes: {
-        url: React.PropTypes.string.isRequired,
-        width: React.PropTypes.string,
-        height: React.PropTypes.string
+        url: PropTypes.string.isRequired,
+        width: PropTypes.string,
+        height: PropTypes.string
     },
 
     getDefaultProps:function(){
