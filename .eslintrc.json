@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": [
+    "acando",
+    "acando/rules/react",
+    "acando/rules/jsx"
+  ],
+  "plugins": [
+    "prettier",
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "quotes": [2, "double"],
+    "linebreak-style": 0,
+    "complexity": 0
+  }
+}
