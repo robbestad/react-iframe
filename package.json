@@ -1,6 +1,6 @@
 {
   "name": "react-iframe",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Easy iframes with react",
   "main": "index.min.js",
   "peerDependencies": {
@@ -36,7 +36,7 @@
     "demo": "beefy demo.js --open -- -t reactify",
     "lint": "eslint index.js --config .eslintrc.json",
     "predist": "npm run lint",
-    "babel": "cross-env babel index.js | ./node_modules/.bin/uglifyjs -o ./index.min.js",
+    "babel": "cross-env babel index.js | uglifyjs -o ./index.min.js",
     "preversion": "npm run babel"
   },
   "license": "ISC",
