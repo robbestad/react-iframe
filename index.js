@@ -1,35 +1,30 @@
-"use strict";
-var React = require("react");
-var createReactClass = require("create-react-class");
-var PropTypes = require("prop-types");
-var Iframe = createReactClass({
-    displayName: "React-Iframe",
-
-    propTypes: {
-        url: PropTypes.string.isRequired,
-        width: PropTypes.string,
-        height: PropTypes.string
-    },
-
-    getDefaultProps: function getDefaultProps() {
-        return {
-            height: "100%",
-            width: "100%",
-            position: "fixed"
-        };
-    },
-
-    shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
-        return this.props.url !== nextProps.url;
-    },
-
-    render: function render() {
-        return React.createElement("iframe", { ref: "iframe",
-            frameBorder: "0",
-            src: this.props.url,
-            style: { position: this.props.position, height: this.props.height, width: this.props.width },
-            height: this.props.height, width: this.props.width });
-    }
-});
-
-module.exports = Iframe;
+import React, {PureComponent} from "react"
+import PropTypes from "prop-types"
+const Iframe = class extends PureComponent {
+  render() {
+    return React.createElement("iframe", {
+      ref: "iframe",
+      frameBorder: "0",
+      src: this.props.url,
+      allowFullScreen: this.props.allowFullScreen || false,
+      style: Object.assign({}, {
+        position: this.props.position || "absolute",
+        display: this.props.display || "block",
+        height: this.props.height || 500,
+        width: this.props.width || 500
+      }, this.props.styles || {}),
+      height: this.props.height || 500,
+      width: this.props.width || 500
+    })
+  }
+}
+Iframe.propTypes = {
+  url: PropTypes.string.isRequired,
+  width: PropTypes.string,
+  position: PropTypes.string,
+  display: PropTypes.string,
+  height: PropTypes.string,
+  styles: PropTypes.object,
+  allowFullScreen: PropTypes.bool
+}
+export default Iframe

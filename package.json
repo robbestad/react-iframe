@@ -1,22 +1,16 @@
 {
   "name": "react-iframe",
-  "version": "0.0.5",
-  "description": "Iframes with react",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Easy iframes with react",
+  "main": "index.min.js",
   "peerDependencies": {
-    "create-react-class": "^15.5.1",
     "prop-types": "^15.5.6",
-    "react": ">=0.13.x"
+    "react": ">=15.5.1"
   },
   "devDependencies": {
-    "babel-eslint": "^2.0.2",
-    "eslint": "^0.17.1",
-    "eslint-plugin-react": "^1.6.0",
-    "gulp": "^3.8.11",
-    "gulp-babel": "^4.0.0",
-    "gulp-jsx": "^0.9.0",
-    "gulp-rename": "^1.2.0",
-    "reactify": "^0.15.2",
+    "babel-eslint": "^7.2.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^6.10.3",
     "uglify-js": "^2.4.20"
   },
   "repository": {
@@ -27,22 +21,21 @@
   "keywords": [
     "react",
     "react-component",
-    "iframe",
-    "component"
+    "iframe"
   ],
   "author": {
     "name": "Sven Anders Robbestad",
     "email": "anders@robbestad.com",
-    "url": "http://www.robbestad.com"
+    "url": "https://www.robbestad.com"
   },
   "scripts": {
-    "demo": "./node_modules/.bin/beefy demo/index.js --open -- -t reactify",
-    "lint": "./node_modules/.bin/eslint index.jsx",
-    "patch": "npm run lint && npm version patch",
-    "minor": "npm run lint && npm version minor",
-    "major": "npm run lint && npm version major",
-    "jsx": "npm run lint && gulp && ./node_modules/.bin/uglifyjs index.js > dist/react-iframe.min.js",
-    "up": "npm run jsx && sh bin/authors && git commit -am \"Service release\" --allow-empty && npm release patch && git push --tags origin HEAD:master && npm publish"
+    "demo": "beefy demo.js --open -- -t reactify",
+    "lint": "eslint index.js --config .eslintrc.json",
+    "predist": "npm run lint",
+    "dist": "./node_modules/.bin/uglifyjs index.js > dist/react-iframe.min.js"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "eslint-config-acando": "^1.1.5"
+  }
 }
