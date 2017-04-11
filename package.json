@@ -1,6 +1,6 @@
 {
   "name": "react-iframe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easy iframes with react",
   "main": "index.min.js",
   "peerDependencies": {
