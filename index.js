@@ -6,15 +6,16 @@ const Iframe = class extends PureComponent {
       ref: "iframe",
       frameBorder: "0",
       src: this.props.url,
+      target: "_parent",
       allowFullScreen: this.props.allowFullScreen || false,
       style: Object.assign({}, {
         position: this.props.position || "absolute",
         display: this.props.display || "block",
-        height: this.props.height || 500,
-        width: this.props.width || 500
+        height: this.props.height || "100%",
+        width: this.props.width || "100%"
       }, this.props.styles || {}),
-      height: this.props.height || 500,
-      width: this.props.width || 500
+      height: this.props.height || "100%",
+      width: this.props.width || "100%"
     })
   }
 }

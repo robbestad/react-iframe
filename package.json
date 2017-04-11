@@ -5,7 +5,7 @@
   "main": "index.min.js",
   "peerDependencies": {
     "prop-types": "^15.5.6",
-    "react": ">=15.5.1"
+    "react": ">=15.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
@@ -33,7 +33,6 @@
     "url": "https://www.robbestad.com"
   },
   "scripts": {
-    "demo": "beefy demo.js --open -- -t reactify",
     "lint": "eslint index.js --config .eslintrc.json",
     "predist": "npm run lint",
     "babel": "cross-env babel index.js | uglifyjs -o ./index.min.js",
