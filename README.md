@@ -1,8 +1,10 @@
-# React IFrame
+# React Iframe
 
 Simple React component for including an iframed page.
 
-![screenshot.png](Youtube in an iframe)
+Total component weight: 2.58 KB
+
+![Youtube in an iframe](screenshot.PNG)
 
 ## Usage
 
