@@ -4,18 +4,18 @@
   "description": "Easy iframes with react",
   "main": "index.min.js",
   "peerDependencies": {
-    "prop-types": "^15.5.6",
-    "react": ">=15.3.0"
+    "prop-types": ">=15.5.x",
+    "react": ">=15.3.x"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-eslint": "^7.2.1",
-    "babel-preset-es2015": "^6.22.0",
-    "cross-env": "^4.0.0",
-    "eslint": "^3.19.0",
-    "eslint-config-acando": "^1.1.5",
-    "eslint-plugin-react": "^6.10.3",
-    "uglifyjs": "^2.4.10"
+    "babel-cli": "6.22.x",
+    "babel-eslint": "7.2.x",
+    "babel-preset-es2015": "6.22.x",
+    "cross-env": "4.0.x",
+    "eslint": "3.19.x",
+    "eslint-config-acando": "1.1.x",
+    "eslint-plugin-react": "6.10.x",
+    "uglifyjs": "2.4.x"
   },
   "repository": {
     "type": "git",
@@ -38,5 +38,8 @@
     "babel": "cross-env babel index.js | uglifyjs -o ./index.min.js",
     "preversion": "npm run babel"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.5.6"
+  }
 }
