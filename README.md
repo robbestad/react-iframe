@@ -8,14 +8,14 @@ Total component weight: 2.58 KB
 
 ## Usage
 
-    const Iframe = require("react-iframe");
-    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA" width="50%" height="50%" allowFullScreen/>
-
-or 
-
     import Iframe from 'react-iframe'
-    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA" width="500px" height="500px" allowFullScreen/>
-
+    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
+            width="450px"
+            height="450px"
+            display="initial"
+            position="relative"
+            allowFullScreen/>
+            
 ### Properties
 
 **position** - *string* defaults to "absolute".
