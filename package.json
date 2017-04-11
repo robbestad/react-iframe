@@ -1,6 +1,6 @@
 {
   "name": "react-iframe",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Easy iframes with react",
   "main": "index.min.js",
   "peerDependencies": {
@@ -33,7 +33,7 @@
     "url": "https://www.robbestad.com"
   },
   "scripts": {
-      "lint": "eslint index.js --config .eslintrc.json",
+    "lint": "eslint index.js --config .eslintrc.json",
     "predist": "npm run lint",
     "babel": "cross-env babel index.js | uglifyjs -o ./index.min.js",
     "preversion": "npm run babel"
