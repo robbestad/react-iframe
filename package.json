@@ -1,11 +1,13 @@
 {
   "name": "react-iframe",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Easy iframes with react",
   "main": "index.min.js",
+  "pperDependencies": {
+    "react": ">=15.x.x"
+  },
   "dependencies": {
-    "prop-types": "^15.5.x",
-    "react": "^15.5.x"
+    "prop-types": "^15.5.x"
   },
   "devDependencies": {
     "babel-cli": "6.22.x",
