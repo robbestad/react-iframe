@@ -10,8 +10,8 @@ Simple React component for including an iframed page.
     <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
             width="450px"
             height="450px"
-            id="myId",
-            className="myClassname",
+            id="myId"
+            className="myClassname"
             display="initial"
             position="relative"
             allowFullScreen/>
@@ -40,8 +40,8 @@ above. For instance:
     <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
                 position="absolute"
                 width="100%"
-                id="myId",
-                className="myClassname",
+                id="myId"
+                className="myClassname"
                 height="100%"
                 styles={{height: "25px"}}
                 allowFullScreen/>
