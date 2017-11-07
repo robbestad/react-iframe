@@ -2,7 +2,7 @@ import React, {PureComponent} from "react"
 import PropTypes from "prop-types"
 const Iframe = class extends PureComponent {
   render() {
-    return React.createElement("iframe", {
+    let props = {
       ref: "iframe",
       frameBorder: "0",
       src: this.props.url,
@@ -16,11 +16,16 @@ const Iframe = class extends PureComponent {
       }, this.props.styles || {}),
       height: this.props.height || "100%",
       width: this.props.width || "100%"
-    })
+    };
+    return React.createElement(
+      "iframe",
+      Object.assign(props, this.props.id ? ({id: this.props.id}) : {})
+    )
   }
 }
 Iframe.propTypes = {
   url: PropTypes.string.isRequired,
+  id: PropTypes.string,
   width: PropTypes.string,
   position: PropTypes.string,
   display: PropTypes.string,
