@@ -2,9 +2,7 @@
   "root": true,
   "parser": "babel-eslint",
   "extends": [
-    "acando",
-    "acando/rules/react",
-    "acando/rules/jsx"
+    "prettier"
   ],
   "plugins": [
     "prettier",
