@@ -2,8 +2,6 @@
 
 Simple React component for including an iframed page.
 
-Total component weight: 2.58 KB
-
 ![Youtube in an iframe](screenshot.PNG)
 
 ## Usage
@@ -12,28 +10,38 @@ Total component weight: 2.58 KB
     <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
             width="450px"
             height="450px"
+            id="myId",
+            className="myClassname",
             display="initial"
             position="relative"
             allowFullScreen/>
             
 ### Properties
 
-**position** - *string* defaults to "absolute".
+**url** **(required)** - *string* the iframe url
 
-**display** - *string* defaults to "block"
+**position** _(optional)_ - *string* defaults to "absolute".
 
-**height** - *string* (1px > any number above 0, or 1% to 100%)
+**id** _(optional)_ - *string* if set, adds the id parameter with the given value.
 
-**width** - *string* (1px > any number above 0, or 1% to 100%)
+**className** _(optional)_ - *string* if set, adds the class parameter with the given value.
 
-**allowFullScreen** - if set, applies the allowFullScreen param
+**display** _(optional)_ - *string* defaults to "block"
 
-**styles** - add any additional styles here. Will (intentionally) override any of the props 
+**height** _(optional)_ - *string* (1px > any number above 0, or 1% to 100%)
+
+**width** _(optional)_ - *string* (1px > any number above 0, or 1% to 100%)
+
+**allowFullScreen** _(optional)_ - if set, applies the allowFullScreen param
+
+**styles** _(optional)_ - add any additional styles here. Will (intentionally) override any of the props 
 above. For instance:
 
     <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
                 position="absolute"
                 width="100%"
+                id="myId",
+                className="myClassname",
                 height="100%"
                 styles={{height: "25px"}}
                 allowFullScreen/>
