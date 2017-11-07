@@ -61,6 +61,7 @@
     "predist": "npm run lint",
     "release": "standard-version",
     "prerelease": "babel --minified index.js -o index.min.js",
+    "postversion": "cp index.min.js demo/react-iframe.min.js",
     "preversion": "npm run prerelease",
     "precommit": "lint-staged"
   },

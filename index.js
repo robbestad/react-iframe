@@ -1,4 +1,4 @@
-import { createElement, PureComponent } from "react"
+import React, { PureComponent } from "react"
 import PropTypes from "prop-types"
 import objectAssign from "object-assign"
 
@@ -10,7 +10,7 @@ const Iframe = class extends PureComponent {
 			src: this.props.url,
 			target: "_parent",
 			allowFullScreen: this.props.allowFullScreen || false,
-			style: Object.assign(
+			style: objectAssign(
 				{},
 				{
 					position: this.props.position || "absolute",
@@ -24,7 +24,8 @@ const Iframe = class extends PureComponent {
 			name: this.props.name || "",
 			width: this.props.width || "100%"
 		}
-		return createElement(
+
+		return React.createElement(
 			"iframe",
 			objectAssign(props, this.props.id ? { id: this.props.id } : {}, this.props.className ? { className: this.props.className } : {})
 		)
