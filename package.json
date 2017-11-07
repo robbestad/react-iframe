@@ -27,6 +27,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
+    "standard-version": "^4.2.0",
     "uglify-js": "^3.1.8"
   },
   "repository": {
@@ -48,8 +49,9 @@
     "test": "mocha --require babel-register test/",
     "lint": "eslint index.js --config .eslintrc.json",
     "predist": "npm run lint",
-    "babel": "cross-env ./node_modules/.bin/babel --presets \"es2015\" index.js  | uglifyjs -o ./index.min.js",
-    "preversion": "npm run babel"
+    "release": "standard-version",
+    "prerelease": "cross-env ./node_modules/.bin/babel --presets \"es2015\" index.js  | uglifyjs -o ./index.min.js",
+    "preversion": "npm run prerelease"
   },
   "license": "ISC"
 }
