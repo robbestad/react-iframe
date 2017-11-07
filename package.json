@@ -62,7 +62,7 @@
     "release": "standard-version",
     "predeploy": "babel --minified index.js -o index.min.js",
     "deploy": "babel --minified index.js -o demo/react-iframe.min.js",
-    "postdeploy": "npm run release",
+    "postdeploy": "standard-version",
     "precommit": "lint-staged"
   },
   "license": "ISC"
