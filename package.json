@@ -61,7 +61,8 @@
     "predist": "npm run lint",
     "release": "standard-version",
     "prerelease": "cross-env ./node_modules/.bin/babel --presets \"es2015\" index.js  | uglifyjs -o ./index.min.js",
-    "preversion": "npm run prerelease"
+    "preversion": "npm run prerelease",
+    "precommit": "lint-staged"
   },
   "license": "ISC"
 }
