@@ -1,69 +1,61 @@
 {
-  "name": "react-iframe",
-  "version": "1.0.10",
-  "description": "Easy iframes with react",
-  "main": "index.min.js",
-  "peerDependencies": {
-    "react": ">=16.x.x"
-  },
-  "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "8.0.2",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "chai": "^4.1.2",
-    "cross-env": "5.1.1",
-    "enzyme": "^3.1.1",
-    "enzyme-adapter-react-16": "^1.0.4",
-    "eslint": "4.10.0",
-    "eslint-config-acando": "1.3.7",
-    "eslint-plugin-react": "7.4.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.3.0",
-    "mocha": "^4.0.1",
-    "object-assign": "^4.1.1",
-    "prettier": "^1.8.0",
-    "prop-types": "^15.6.x",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-test-renderer": "^16.0.0",
-    "standard-version": "^4.2.0",
-    "uglify-js": "^3.1.8"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --semi false --single-quote false --write",
-      "npm run prerelease",
-      "git add"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:svenanders/react-iframe.git"
-  },
-  "homepage": "https://github.com/svenanders/react-iframe",
-  "keywords": [
-    "react",
-    "react-component",
-    "iframe"
-  ],
-  "author": {
-    "name": "Sven Anders Robbestad",
-    "email": "anders@robbestad.com",
-    "url": "https://www.robbestad.com"
-  },
-  "scripts": {
-    "test": "mocha --require babel-register test/",
-    "lint": "eslint index.js --config .eslintrc.json",
-    "predist": "npm run lint",
-    "release": "standard-version",
-    "prerelease": "babel --minified index.js -o index.min.js",
-    "postversion": "cp index.min.js demo/react-iframe.min.js",
-    "preversion": "npm run prerelease",
-    "precommit": "lint-staged"
-  },
-  "license": "ISC"
+	"name": "react-iframe",
+	"version": "1.0.10",
+	"description": "Easy iframes with react",
+	"main": "index.min.js",
+	"peerDependencies": {
+		"react": ">=16.x.x"
+	},
+	"devDependencies": {
+		"babel-cli": "6.26.0",
+		"babel-core": "^6.26.0",
+		"babel-eslint": "8.0.2",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-es2015": "6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"chai": "^4.1.2",
+		"cross-env": "5.1.1",
+		"enzyme": "^3.1.1",
+		"enzyme-adapter-react-16": "^1.0.4",
+		"eslint": "4.10.0",
+		"eslint-config-acando": "1.3.7",
+		"eslint-plugin-react": "7.4.0",
+		"husky": "^0.14.3",
+		"lint-staged": "^4.3.0",
+		"mocha": "^4.0.1",
+		"object-assign": "^4.1.1",
+		"prettier": "^1.8.0",
+		"prop-types": "^15.6.x",
+		"react": "^16.0.0",
+		"react-dom": "^16.0.0",
+		"react-test-renderer": "^16.0.0",
+		"standard-version": "^4.2.0",
+		"uglify-js": "^3.1.8"
+	},
+	"lint-staged": {
+		"*.js": ["prettier --semi false --single-quote false --write", "npm run deploy", "git add"]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:svenanders/react-iframe.git"
+	},
+	"homepage": "https://github.com/svenanders/react-iframe",
+	"keywords": ["react", "react-component", "iframe"],
+	"author": {
+		"name": "Sven Anders Robbestad",
+		"email": "anders@robbestad.com",
+		"url": "https://www.robbestad.com"
+	},
+	"scripts": {
+		"test": "mocha --require babel-register test/",
+		"lint": "eslint index.js --config .eslintrc.json",
+		"predist": "npm run lint",
+		"release": "standard-version",
+		"predeploy": "babel --minified index.js -o index.min.js",
+		"deploy": "babel --minified index.js -o demo/react-iframe.min.js",
+		"postdeploy": "npm run release",
+		"precommit": "lint-staged"
+	},
+	"license": "ISC"
 }
