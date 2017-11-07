@@ -60,7 +60,7 @@
     "lint": "eslint index.js --config .eslintrc.json",
     "prerelease": "npm run minify",
     "release": "git commit -am\"New release\"",
-    "postrelease": "standard-version",
+    "postrelease": "standard-version --release-as minor",
     "preminify": "babel --minified index.js -o index.min.js",
     "minify": "babel --minified index.js -o demo/react-iframe.min.js",
     "precommit": "lint-staged"
