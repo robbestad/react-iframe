@@ -1,5 +1,7 @@
 import React, {PureComponent} from "react"
 import PropTypes from "prop-types"
+import objectAssign from "object-assign"
+
 const Iframe = class extends PureComponent {
   render() {
     let props = {
@@ -20,7 +22,7 @@ const Iframe = class extends PureComponent {
     };
     return React.createElement(
       "iframe",
-      Object.assign(props, this.props.id ? ({id: this.props.id}) : {}, this.props.className ? ({className: this.props.className}) : {})
+      objectAssign(props, this.props.id ? ({id: this.props.id}) : {}, this.props.className ? ({className: this.props.className}) : {})
     )
   }
 }
