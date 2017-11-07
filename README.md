@@ -47,3 +47,7 @@ above. For instance:
                 allowFullScreen/>
 
 will set the height to 25px even though it was specified as 100% in the props.
+
+# Development
+
+All code resides in `index.js`. Deploy with either `npm run release`, `npm run release-minor` or `npm run release-major`
