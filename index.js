@@ -15,20 +15,23 @@ const Iframe = class extends PureComponent {
         width: this.props.width || "100%"
       }, this.props.styles || {}),
       height: this.props.height || "100%",
+      name: this.props.name || "",
       width: this.props.width || "100%"
     };
     return React.createElement(
       "iframe",
-      Object.assign(props, this.props.id ? ({id: this.props.id}) : {})
+      Object.assign(props, this.props.id ? ({id: this.props.id}) : {}, this.props.className ? ({className: this.props.className}) : {})
     )
   }
 }
 Iframe.propTypes = {
   url: PropTypes.string.isRequired,
   id: PropTypes.string,
+  className: PropTypes.string,
   width: PropTypes.string,
   position: PropTypes.string,
   display: PropTypes.string,
+  name: PropTypes.string,
   height: PropTypes.string,
   styles: PropTypes.object,
   allowFullScreen: PropTypes.bool
