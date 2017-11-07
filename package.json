@@ -34,7 +34,7 @@
 		"uglify-js": "^3.1.8"
 	},
 	"lint-staged": {
-		"*.js": ["prettier --semi false --single-quote false --write", "npm run deploy", "git add"]
+		"*.js": ["prettier --semi false --single-quote false --write", "git add"]
 	},
 	"repository": {
 		"type": "git",
@@ -51,6 +51,7 @@
 		"test": "mocha --require babel-register test/",
 		"lint": "eslint index.js --config .eslintrc.json",
 		"predist": "npm run lint",
+        "prerelease": "npm run deploy",
 		"release": "standard-version",
 		"predeploy": "babel --minified index.js -o index.min.js",
 		"deploy": "babel --minified index.js -o demo/react-iframe.min.js",
