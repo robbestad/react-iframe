@@ -20,6 +20,7 @@
     "enzyme-adapter-react-16": "^1.0.4",
     "eslint": "4.10.0",
     "eslint-config-acando": "1.3.7",
+    "eslint-config-prettier": "^2.7.0",
     "eslint-plugin-react": "7.4.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
@@ -57,12 +58,11 @@
   "scripts": {
     "test": "mocha --require babel-register test/",
     "lint": "eslint index.js --config .eslintrc.json",
-    "predist": "npm run lint",
-    "prerelease": "npm run deploy",
-    "release": "standard-version",
-    "predeploy": "babel --minified index.js -o index.min.js",
-    "deploy": "babel --minified index.js -o demo/react-iframe.min.js",
-    "postdeploy": "standard-version",
+    "prerelease": "npm run minify",
+    "release": "git commit -am\"New release\"",
+    "postrelease": "standard-version",
+    "preminify": "babel --minified index.js -o index.min.js",
+    "minify": "babel --minified index.js -o demo/react-iframe.min.js",
     "precommit": "lint-staged"
   },
   "license": "ISC"
