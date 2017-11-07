@@ -60,7 +60,7 @@
     "lint": "eslint index.js --config .eslintrc.json",
     "predist": "npm run lint",
     "release": "standard-version",
-    "prerelease": "cross-env ./node_modules/.bin/babel --presets \"es2015\" index.js  | uglifyjs -o ./index.min.js",
+    "prerelease": "babel --minified index.js -o index.min.js",
     "preversion": "npm run prerelease",
     "precommit": "lint-staged"
   },
