@@ -6,15 +6,17 @@ Simple React component for including an iframed page.
 
 ## Usage
 
-    import Iframe from 'react-iframe'
-    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
-            width="450px"
-            height="450px"
-            id="myId"
-            className="myClassname"
-            display="initial"
-            position="relative"
-            allowFullScreen/>
+```jsx
+import Iframe from 'react-iframe'
+<Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
+        width="450px"
+        height="450px"
+        id="myId"
+        className="myClassname"
+        display="initial"
+        position="relative"
+        allowFullScreen/>
+```
             
 ### Properties
 
@@ -37,14 +39,16 @@ Simple React component for including an iframed page.
 **styles** _(optional)_ - add any additional styles here. Will (intentionally) override any of the props 
 above. For instance:
 
-    <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
-                position="absolute"
-                width="100%"
-                id="myId"
-                className="myClassname"
-                height="100%"
-                styles={{height: "25px"}}
-                allowFullScreen/>
+```jsx
+<Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
+            position="absolute"
+            width="100%"
+            id="myId"
+            className="myClassname"
+            height="100%"
+            styles={{height: "25px"}}
+            allowFullScreen/>
+```
 
 will set the height to 25px even though it was specified as 100% in the props.
 
