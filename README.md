@@ -4,6 +4,9 @@ Simple React component for including an iframed page.
 
 ![Youtube in an iframe](screenshot.PNG)
 
+## Install
+`npm i react-iframe --save`
+
 ## Usage
 
 ```jsx
