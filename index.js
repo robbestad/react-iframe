@@ -22,7 +22,8 @@ const Iframe = class extends PureComponent {
 			),
 			height: this.props.height || "100%",
 			name: this.props.name || "",
-			width: this.props.width || "100%"
+			width: this.props.width || "100%",
+			onLoad: this.props.onLoad
 		}
 
 		return React.createElement(
