@@ -8,7 +8,7 @@ lint:
 	./node_modules/.bin/eslint index.jsx
 
 patch: 
-	lint
+	@$(call lint)
 	@$(call release,patch)
 
 minor: 
