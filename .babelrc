@@ -1,11 +1,13 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "node": "current",
-        "browsers": ["last 2 versions", "ie >= 9", "safari >= 7"]
-      }
-    }],
-    ["react"]
+    "env",
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "transform-decorators",
+    "transform-react-constant-elements",
+    "transform-react-inline-elements"
   ]
 }

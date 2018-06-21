@@ -1,6 +1,8 @@
-import React, { PureComponent } from "react"
-import PropTypes from "prop-types"
-import objectAssign from "object-assign"
+const React = require("react")
+const { PureComponent } = React
+const PropTypes = require("prop-types")
+const objectAssign = require("object-assign")
+function noop() {}
 
 const Iframe = class extends PureComponent {
 	render() {
@@ -23,7 +25,7 @@ const Iframe = class extends PureComponent {
 			height: this.props.height || "100%",
 			name: this.props.name || "",
 			width: this.props.width || "100%",
-			onLoad: this.props.onLoad
+			onLoad: this.props.onLoad || noop
 		}
 
 		return React.createElement(
@@ -41,6 +43,7 @@ Iframe.propTypes = {
 	display: PropTypes.string,
 	name: PropTypes.string,
 	height: PropTypes.string,
+	onLoad: PropTypes.func,
 	styles: PropTypes.object,
 	allowFullScreen: PropTypes.bool
 }
