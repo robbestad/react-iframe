@@ -1,7 +1,7 @@
 {
   "name": "react-iframe",
   "version": "1.2.0",
-  "description": "Easy peasy iframes with react",
+  "description": "Easy peasy lemon squeezy iframes with react",
   "main": "index.min.js",
   "peerDependencies": {
     "react": ">=16.x.x"
