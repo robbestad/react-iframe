@@ -1,39 +1,33 @@
-const React = require("react")
-const { PureComponent } = React
-const PropTypes = require("prop-types")
-const objectAssign = require("object-assign")
+const React = require("react");
+const { PureComponent, createElement } = React;
+const PropTypes = require("prop-types");
 function noop() {}
 
 const Iframe = class extends PureComponent {
 	render() {
+		const { url: src, allowFullScreen, name, styles, position, display, height, width, onLoad, id, className } = this.props;
 		const props = {
 			ref: "iframe",
 			frameBorder: "0",
-			src: this.props.url,
+			src,
 			target: "_parent",
-			allowFullScreen: this.props.allowFullScreen || false,
-			style: objectAssign(
-				{},
-				{
-					position: this.props.position || "absolute",
-					display: this.props.display || "block",
-					height: this.props.height || "100%",
-					width: this.props.width || "100%"
-				},
-				this.props.styles || {}
-			),
-			height: this.props.height || "100%",
-			name: this.props.name || "",
-			width: this.props.width || "100%",
-			onLoad: this.props.onLoad || noop
-		}
+			allowFullScreen,
+			style: {
+				position,
+				display,
+				height,
+				width,
+				...styles,
+			},
+			height,
+			name,
+			width,
+			onLoad,
+		};
 
-		return React.createElement(
-			"iframe",
-			objectAssign(props, this.props.id ? { id: this.props.id } : {}, this.props.className ? { className: this.props.className } : {})
-		)
+		return createElement("iframe", { ...props, ...(id ? { id } : {}), ...(className ? { className } : {}) });
 	}
-}
+};
 Iframe.propTypes = {
 	url: PropTypes.string.isRequired,
 	id: PropTypes.string,
@@ -45,6 +39,21 @@ Iframe.propTypes = {
 	height: PropTypes.string,
 	onLoad: PropTypes.func,
 	styles: PropTypes.object,
-	allowFullScreen: PropTypes.bool
-}
-export default Iframe
+	allowFullScreen: PropTypes.bool,
+};
+
+Iframe.defaultProps = {
+	url: PropTypes.string.isRequired,
+	id: PropTypes.string,
+	className: PropTypes.string,
+	position: "absolute",
+	display: "block",
+	name: "",
+	height: "100%",
+	width: "100%",
+	onLoad: noop,
+	styles: {},
+	allowFullScreen: false,
+};
+
+export default Iframe;
