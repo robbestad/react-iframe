@@ -2,12 +2,18 @@ const React = require("react")
 const { PureComponent } = React
 const PropTypes = require("prop-types")
 const objectAssign = require("object-assign")
-function noop() {}
 
 const Iframe = class extends PureComponent {
+	componentDidMount() {
+		this.iframe.onload = () => {
+			if (this.props.onLoad) {
+				this.props.onLoad(this.iframe)
+			}
+		}
+	}
 	render() {
 		const props = {
-			ref: "iframe",
+			ref: f => (this.iframe = f),
 			frameBorder: "0",
 			src: this.props.url,
 			target: "_parent",
@@ -24,8 +30,7 @@ const Iframe = class extends PureComponent {
 			),
 			height: this.props.height || "100%",
 			name: this.props.name || "",
-			width: this.props.width || "100%",
-			onLoad: this.props.onLoad || noop
+			width: this.props.width || "100%"
 		}
 
 		return React.createElement(
