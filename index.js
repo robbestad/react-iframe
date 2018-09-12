@@ -25,7 +25,9 @@ const Iframe = class extends PureComponent {
 			height: this.props.height || "100%",
 			name: this.props.name || "",
 			width: this.props.width || "100%",
-			onLoad: this.props.onLoad || noop
+			onLoad: this.props.onLoad || noop,
+			onMouseOver: this.props.onMouseOver || noop,
+			onMouseOut: this.props.onMouseOut || noop
 		}
 
 		return React.createElement(
@@ -44,6 +46,8 @@ Iframe.propTypes = {
 	name: PropTypes.string,
 	height: PropTypes.string,
 	onLoad: PropTypes.func,
+	onMouseOver: PropTypes.func,
+	onMouseOut: PropTypes.func,
 	styles: PropTypes.object,
 	allowFullScreen: PropTypes.bool
 }
