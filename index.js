@@ -11,6 +11,7 @@ const Iframe = class extends PureComponent {
 			frameBorder: "0",
 			src: this.props.url,
 			target: "_parent",
+			sandbox: this.props.sandbox || "allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation",
 			allowFullScreen: this.props.allowFullScreen || false,
 			style: objectAssign(
 				{},
@@ -46,6 +47,7 @@ Iframe.propTypes = {
 	name: PropTypes.string,
 	height: PropTypes.string,
 	onLoad: PropTypes.func,
+	sandbox: PropTypes.string,
 	onMouseOver: PropTypes.func,
 	onMouseOut: PropTypes.func,
 	styles: PropTypes.object,
