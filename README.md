@@ -39,6 +39,8 @@ import Iframe from 'react-iframe'
 **styles** _(optional)_ - add any additional styles here. Will (intentionally) override any of the props 
 above. For instance:
 
+**sandbox** _(optional)_ - add optional sandbox values ("allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation")
+
 ```jsx
 <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
             position="absolute"

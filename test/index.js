@@ -8,6 +8,8 @@ configure({ adapter: new Adapter() })
 
 describe("<Iframe />", () => {
 	let wrapper
+	let wrapperWithSandboxFalse
+	let wrapperWithoutSandbox
 
 	before(() => {
 		wrapper = shallow(
@@ -21,6 +23,35 @@ describe("<Iframe />", () => {
 				id="iframe-id"
 				className="myClass"
 				sandbox="allow-scripts"
+				allowFullScreen
+			/>
+		)
+
+		wrapperWithSandboxFalse = shallow(
+			<Iframe
+				url="http://www.youtube.com/embed/xDMP3i36naA"
+				width="750px"
+				height="450px"
+				display="initial"
+				position="relative"
+				name="iframe-name"
+				id="iframe-id"
+				className="myClass"
+				sandbox={false}
+				allowFullScreen
+			/>
+		)
+
+		wrapperWithoutSandbox = shallow(
+			<Iframe
+				url="http://www.youtube.com/embed/xDMP3i36naA"
+				width="750px"
+				height="450px"
+				display="initial"
+				position="relative"
+				name="iframe-name"
+				id="iframe-id"
+				className="myClass"
 				allowFullScreen
 			/>
 		)
@@ -52,6 +83,14 @@ describe("<Iframe />", () => {
 
 	it("renders an iframe with sandbox `allow-scripts`", () => {
 		expect(wrapper.getElement().props.sandbox).to.equal("allow-scripts")
+	})
+
+	it("renders an iframe without the sandbox property if set to false", () => {
+		expect(wrapperWithSandboxFalse.getElement().props.sandbox).to.equal(undefined)
+	})
+
+	it("renders an iframe without the sandbox property if not set", () => {
+		expect(wrapperWithoutSandbox.getElement().props.sandbox).to.equal(undefined)
 	})
 
 	it("renders an iframe with position `relative`", () => {

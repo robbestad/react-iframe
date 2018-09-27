@@ -11,7 +11,6 @@ const Iframe = class extends PureComponent {
 			frameBorder: "0",
 			src: this.props.url,
 			target: "_parent",
-			sandbox: this.props.sandbox || false,
 			allowFullScreen: this.props.allowFullScreen || false,
 			style: objectAssign(
 				{},
@@ -33,7 +32,12 @@ const Iframe = class extends PureComponent {
 
 		return React.createElement(
 			"iframe",
-			objectAssign(props, this.props.id ? { id: this.props.id } : {}, this.props.className ? { className: this.props.className } : {})
+			objectAssign(
+				props,
+				this.props.id ? { id: this.props.id } : {},
+				this.props.sandbox ? { sandbox: this.props.sandbox } : {},
+				this.props.className ? { className: this.props.className } : {}
+			)
 		)
 	}
 }
