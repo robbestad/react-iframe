@@ -11,7 +11,7 @@ const Iframe = class extends PureComponent {
 			frameBorder: "0",
 			src: this.props.url,
 			target: "_parent",
-			sandbox: this.props.sandbox || "allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation",
+			sandbox: this.props.sandbox || false,
 			allowFullScreen: this.props.allowFullScreen || false,
 			style: objectAssign(
 				{},
