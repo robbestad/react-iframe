@@ -18,6 +18,7 @@ describe("<Iframe />", () => {
 				width="750px"
 				height="450px"
 				display="initial"
+				allow="encrypted-media"
 				position="relative"
 				name="iframe-name"
 				id="iframe-id"
@@ -83,6 +84,14 @@ describe("<Iframe />", () => {
 
 	it("renders an iframe with sandbox `allow-scripts`", () => {
 		expect(wrapper.getElement().props.sandbox).to.equal("allow-scripts")
+	})
+
+	it("renders an iframe with allow `encrypted-media`", () => {
+		expect(wrapper.getElement().props.allow).to.equal("encrypted-media")
+	})
+
+	it("renders an iframe without the allow property if excluded", () => {
+		expect(wrapperWithoutSandbox.getElement().props.allow).to.equal(undefined)
 	})
 
 	it("renders an iframe without the sandbox property if set to false", () => {

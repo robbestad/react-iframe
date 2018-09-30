@@ -36,6 +36,7 @@ const Iframe = class extends PureComponent {
 				props,
 				this.props.id ? { id: this.props.id } : {},
 				this.props.sandbox ? { sandbox: this.props.sandbox } : {},
+				this.props.allow ? { allow: this.props.allow } : {},
 				this.props.className ? { className: this.props.className } : {}
 			)
 		)
@@ -52,6 +53,7 @@ Iframe.propTypes = {
 	height: PropTypes.string,
 	onLoad: PropTypes.func,
 	sandbox: PropTypes.string,
+	allow: PropTypes.string,
 	onMouseOver: PropTypes.func,
 	onMouseOut: PropTypes.func,
 	styles: PropTypes.object,
