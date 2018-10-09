@@ -36,13 +36,12 @@ import Iframe from 'react-iframe'
 
 **allowFullScreen** _(optional)_ - if set, applies the allowFullScreen param
 
-**styles** _(optional)_ - add any additional styles here. Will (intentionally) override any of the props 
-above. For instance:
-
 **sandbox** _(optional)_ - add optional sandbox values ("allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation")
 
 **allow** _(optional)_ - add optional [_allow_](https://dev.chromium.org/Home/chromium-security/deprecating-permissions-in-cross-origin-iframes#TOC-To-continue-to-use-permissions-from-iframes-on-your-website) values ("geolocation microphone camera midi encrypted-media")
 
+**styles** _(optional)_ - add any additional styles here. Will (intentionally) override any of the props 
+above. For instance:
 ```jsx
 <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
             position="absolute"
