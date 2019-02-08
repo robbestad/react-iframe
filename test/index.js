@@ -10,6 +10,8 @@ describe("<Iframe />", () => {
 	let wrapper
 	let wrapperWithSandboxFalse
 	let wrapperWithoutSandbox
+	let wrapperWithTitle
+	let wrapperWithAriaHidden
 
 	before(() => {
 		wrapper = shallow(
@@ -56,6 +58,10 @@ describe("<Iframe />", () => {
 				allowFullScreen
 			/>
 		)
+
+		wrapperWithTitle = shallow(<Iframe url="http://www.youtube.com/embed/xDMP3i36naA" title="Accessible title" />)
+
+		wrapperWithAriaHidden = shallow(<Iframe url="http://www.youtube.com/embed/xDMP3i36naA" ariaHidden={true} />)
 	})
 
 	it("renders an iframe with id `#iframe-id`", () => {
@@ -106,7 +112,12 @@ describe("<Iframe />", () => {
 		expect(wrapper.getElement().props.style.position).to.equal("relative")
 	})
 
-	it("renders an iframe with display `initial`", () => {
-		expect(wrapper.getElement().props.style.display).to.equal("initial")
+	it("renders an iframe with display `Accessible title`", () => {
+		expect(wrapperWithTitle.getElement().props.title).to.equal("Accessible title")
+	})
+
+	it("renders an iframe with aria-hidden `true`", () => {
+		console.log(wrapperWithAriaHidden.getElement().props)
+		expect(wrapperWithAriaHidden.getElement().props["aria-hidden"]).to.equal("true")
 	})
 })

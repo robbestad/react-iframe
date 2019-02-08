@@ -37,7 +37,9 @@ const Iframe = class extends PureComponent {
 				this.props.id ? { id: this.props.id } : {},
 				this.props.sandbox ? { sandbox: this.props.sandbox } : {},
 				this.props.allow ? { allow: this.props.allow } : {},
-				this.props.className ? { className: this.props.className } : {}
+				this.props.className ? { className: this.props.className } : {},
+				this.props.title ? { title: this.props.title } : {},
+				this.props.ariaHidden ? { "aria-hidden": "true" } : {}
 			)
 		)
 	}
@@ -45,6 +47,7 @@ const Iframe = class extends PureComponent {
 Iframe.propTypes = {
 	url: PropTypes.string.isRequired,
 	id: PropTypes.string,
+	title: PropTypes.string,
 	className: PropTypes.string,
 	width: PropTypes.string,
 	position: PropTypes.string,
@@ -57,6 +60,7 @@ Iframe.propTypes = {
 	onMouseOver: PropTypes.func,
 	onMouseOut: PropTypes.func,
 	styles: PropTypes.object,
-	allowFullScreen: PropTypes.bool
+	allowFullScreen: PropTypes.bool,
+	ariaHidden: PropTypes.bool
 }
 export default Iframe
