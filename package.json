@@ -6,6 +6,10 @@
   "peerDependencies": {
     "react": ">=16.x.x"
   },
+  "dependencies": {
+    "object-assign": "^4.1.1",
+    "prop-types": "^15.6.x"
+  },
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "^6.26.0",
@@ -30,9 +34,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
     "mocha": "^4.0.1",
-    "object-assign": "^4.1.1",
     "prettier": "^1.8.0",
-    "prop-types": "^15.6.x",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
