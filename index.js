@@ -35,8 +35,7 @@ const Iframe = class extends PureComponent {
 			"iframe",
 			objectAssign(
 				props,
-				this.props.frameBorder ? {frameBorder: this.props.frameborder } : {},
-				this.props.scrolling ? {scrolling: this.props.scrolling} : {},
+				this.props.scrolling ? { scrolling: this.props.scrolling } : {},
 				this.props.id ? { id: this.props.id } : {},
 				this.props.sandbox ? { sandbox: this.props.sandbox } : {},
 				this.props.allow ? { allow: this.props.allow } : {},

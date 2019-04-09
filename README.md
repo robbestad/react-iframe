@@ -20,7 +20,11 @@ import Iframe from 'react-iframe'
             
 ### Properties
 
-**url** **(required)** - *string* the iframe url
+**url** **(required)** - *string* the iframe url.
+
+**scrolling** _(optional)_ - *string* not set if if not provided.
+
+**overflow** _(optional)_ - *string* default to "auto".
 
 **position** _(optional)_ - *string* defaults to "absolute".
 
