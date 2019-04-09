@@ -8,7 +8,7 @@ const Iframe = class extends PureComponent {
 	render() {
 		const props = {
 			ref: "iframe",
-			frameBorder: "0",
+			frameBorder: this.props.frameBorder || "0",
 			src: this.props.url,
 			target: "_parent",
 			allowFullScreen: this.props.allowFullScreen || false,
@@ -18,7 +18,8 @@ const Iframe = class extends PureComponent {
 					position: this.props.position || "absolute",
 					display: this.props.display || "block",
 					height: this.props.height || "100%",
-					width: this.props.width || "100%"
+					width: this.props.width || "100%",
+					overflow: this.props.overflow || "auto"
 				},
 				this.props.styles || {}
 			),
@@ -34,6 +35,8 @@ const Iframe = class extends PureComponent {
 			"iframe",
 			objectAssign(
 				props,
+				this.props.frameBorder ? {frameBorder: this.props.frameborder } : {},
+				this.props.scrolling ? {scrolling: this.props.scrolling} : {},
 				this.props.id ? { id: this.props.id } : {},
 				this.props.sandbox ? { sandbox: this.props.sandbox } : {},
 				this.props.allow ? { allow: this.props.allow } : {},
