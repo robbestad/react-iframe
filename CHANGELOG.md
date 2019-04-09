@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.2"></a>
+## [1.5.2](https://github.com/svenanders/react-iframe/compare/v1.5.0...v1.5.2) (2019-04-09)
+
+
+### Bug Fixes
+
+* add scrolling prop ([dc376bb](https://github.com/svenanders/react-iframe/commit/dc376bb))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/svenanders/react-iframe/compare/v1.4.1...v1.5.0) (2019-02-20)
 
