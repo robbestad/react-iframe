@@ -69,6 +69,8 @@
     "release": "git commit -am\"New release\"",
     "postrelease": "standard-version",
     "prerelease-minor": "npm run prerelease",
+    "release-patch": "npm run release",
+    "postrelease-patch": "standard-version --release-as patch",
     "release-minor": "npm run release",
     "postrelease-minor": "standard-version --release-as minor",
     "prerelease-major": "npm run prerelease",

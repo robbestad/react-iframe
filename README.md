@@ -24,7 +24,9 @@ import Iframe from 'react-iframe'
 
 **scrolling** _(optional)_ - *string* not set if if not provided.
 
-**overflow** _(optional)_ - *string* default to "auto".
+**overflow** _(optional)_ - *string* default to "hidden".
+
+**frameBorder** _(optional)_ - *number* default to "0".
 
 **position** _(optional)_ - *string* defaults to "absolute".
 

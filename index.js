@@ -18,7 +18,7 @@ const Iframe = class extends PureComponent {
 					display: this.props.display || "block",
 					height: this.props.height || "100%",
 					width: this.props.width || "100%",
-					overflow: this.props.overflow || "auto"
+					overflow: this.props.overflow || "hidden"
 				},
 				this.props.styles || {}
 			),
@@ -35,7 +35,7 @@ const Iframe = class extends PureComponent {
 			objectAssign(
 				props,
 				this.props.frameBorder ? { frameBorder: this.props.frameborder } : { frameBorder: 0 },
-				this.props.scrolling ? { scrolling: this.props.scrolling } : {},
+				this.props.scrolling ? { scrolling: this.props.scrolling } : { scrolling: "no" },
 				this.props.id ? { id: this.props.id } : {},
 				this.props.sandbox ? { sandbox: this.props.sandbox } : {},
 				this.props.allow ? { allow: this.props.allow } : {},
