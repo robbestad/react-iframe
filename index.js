@@ -8,7 +8,6 @@ const Iframe = class extends PureComponent {
 	render() {
 		const props = {
 			ref: "iframe",
-			frameBorder: this.props.frameBorder || "0",
 			src: this.props.url,
 			target: "_parent",
 			allowFullScreen: this.props.allowFullScreen || false,
@@ -35,6 +34,7 @@ const Iframe = class extends PureComponent {
 			"iframe",
 			objectAssign(
 				props,
+				this.props.frameBorder ? { frameBorder: this.props.frameborder } : { frameBorder: 0 },
 				this.props.scrolling ? { scrolling: this.props.scrolling } : {},
 				this.props.id ? { id: this.props.id } : {},
 				this.props.sandbox ? { sandbox: this.props.sandbox } : {},
