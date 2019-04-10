@@ -3,7 +3,7 @@
   "version": "1.7.2",
   "description": "Easy peasy lemon squeezy iframes with react",
   "main": "index.min.js",
-  "types": "./lib/main.d.ts",
+  "types": "index.d.ts",
   "peerDependencies": {
     "react": ">=16.x.x"
   },
