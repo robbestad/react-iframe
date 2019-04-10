@@ -1,6 +1,6 @@
 {
   "name": "react-iframe",
-  "version": "1.7.2",
+  "version": "1.7.3",
   "description": "Easy peasy lemon squeezy iframes with react",
   "main": "index.min.js",
   "types": "index.d.ts",
