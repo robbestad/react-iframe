@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render default iframe 1`] = `
+<iframe
+  allowFullScreen={false}
+  frameBorder={0}
+  height="100%"
+  scrolling="no"
+  src="http://www.foobar.com"
+  style={
+    Object {
+      "display": "block",
+      "height": "100%",
+      "overflow": "hidden",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+  target="_parent"
+  width="100%"
+/>
+`;
+
+exports[`Render iframe with title 1`] = `
+<iframe
+  allow="encrypted-media"
+  allowFullScreen={false}
+  aria-hidden={true}
+  aria-labelledby="someId"
+  className="myIframeClass"
+  frameBorder={2}
+  height="100%"
+  id="myIframeId"
+  name="My Iframe name"
+  onLoad={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  sandbox="allow-scripts"
+  scrolling="yes"
+  src="http://www.foobar.com"
+  style={
+    Object {
+      "display": "inline-block",
+      "height": "100%",
+      "overflow": "auto",
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+  target="_self"
+  title="A foobared iframe"
+  width="100%"
+/>
+`;

@@ -3,14 +3,16 @@
   "version": "1.6.2",
   "description": "Easy peasy lemon squeezy iframes with react",
   "main": "index.min.js",
+  "types": "./lib/main.d.ts",
   "peerDependencies": {
     "react": ">=16.x.x"
   },
   "dependencies": {
-    "object-assign": "^4.1.1",
-    "prop-types": "^15.6.x"
+    "object-assign": "^4.1.1"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/object-assign": "^4.0.30",
     "babel-cli": "6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "8.0.2",
@@ -25,6 +27,7 @@
     "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
     "cross-env": "5.1.1",
+    "csstype": "^2.6.3",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "4.10.0",
@@ -32,13 +35,20 @@
     "eslint-config-prettier": "^2.7.0",
     "eslint-plugin-react": "7.4.0",
     "husky": "^0.14.3",
+    "jest": "^24.7.1",
     "lint-staged": "^4.3.0",
     "mocha": "^4.0.1",
     "prettier": "^1.8.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-hooks-testing-library": "^0.4.0",
     "react-test-renderer": "^16.0.0",
+    "react-testing-library": "^6.1.2",
     "standard-version": "^4.4.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.3",
     "uglify-js": "^3.1.8"
   },
   "lint-staged": {
@@ -63,7 +73,7 @@
     "url": "https://www.robbestad.com"
   },
   "scripts": {
-    "test": "mocha --require babel-register test/",
+    "test": "jest -c ./jest.config.json",
     "lint": "eslint index.js --config .eslintrc.json",
     "prerelease": "npm run minify",
     "release": "git commit -am\"New release\"",
@@ -76,9 +86,28 @@
     "prerelease-major": "npm run prerelease",
     "release-major": "npm run release",
     "postrelease-major": "standard-version --release-as major",
-    "preminify": "babel --minified index.js -o index.min.js",
-    "minify": "babel --minified index.js -o demo/react-iframe.min.js",
+    "preminify": "tsc --outFile index.js",
+    "minify": "babel --minified index.js -o index.min.js",
+    "postminify": "babel --minified index.js -o demo/react-iframe.min.js",
     "precommit": "lint-staged"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "preset": "ts-jest",
+    "verbose": true,
+    "modulePathIgnorePatterns": [
+      "target"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{tsx,ts}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/target/"
+    ],
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx)"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/test_setup/ts-preprocessor.js"
+    }
+  }
 }
