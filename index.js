@@ -31,7 +31,6 @@ define("iframe", ["require", "exports", "react", "object-assign"], function(requ
 	Object.defineProperty(exports, "__esModule", { value: true })
 	react_1 = __importStar(react_1)
 	object_assign_1 = __importDefault(object_assign_1)
-	var noop = function() {}
 	var Iframe = function(_a) {
 		var url = _a.url,
 			allowFullScreen = _a.allowFullScreen,
@@ -54,12 +53,13 @@ define("iframe", ["require", "exports", "react", "object-assign"], function(requ
 			title = _a.title,
 			ariaLabel = _a.ariaLabel,
 			ariaLabelledby = _a.ariaLabelledby,
-			name = _a.name
+			name = _a.name,
+			target = _a.target
 		var iFrameRef = react_1.createRef()
 		var defaultProps = object_assign_1.default({
 			ref: iFrameRef,
 			src: url,
-			target: "_parent",
+			target: target || "_parent",
 			allowFullScreen: allowFullScreen || false,
 			style: {
 				position: position || "absolute",
@@ -80,14 +80,13 @@ define("iframe", ["require", "exports", "react", "object-assign"], function(requ
 			"aria-labelledby": ariaLabelledby || null,
 			"aria-hidden": ariaHidden || null,
 			width: width || "100%",
-			onLoad: onLoad || noop,
-			onMouseOver: onMouseOver || noop,
-			onMouseOut: onMouseOut || noop
+			onLoad: onLoad || null,
+			onMouseOver: onMouseOver || null,
+			onMouseOut: onMouseOut || null
 		})
 		var props = Object.create(null)
 		for (var _i = 0, _b = Object.keys(defaultProps); _i < _b.length; _i++) {
 			var prop = _b[_i]
-			//console.log({ prop }, defaultProps[prop])
 			if (defaultProps[prop] != null) {
 				props[prop] = defaultProps[prop]
 			}
