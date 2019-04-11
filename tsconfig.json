@@ -9,9 +9,9 @@
     "target": "es2015",
     "module": "amd",
     "jsx": "react",
-    "baseUrl": "./",
-    "sourceRoot": "./src",
-    "sourceMap": false
+    "baseUrl": "",
+    "sourceRoot": "src",
+    "sourceMap": true
   },
   "include": [
     "src"
