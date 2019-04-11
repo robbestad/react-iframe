@@ -26,6 +26,7 @@ exports[`Render iframe with title 1`] = `
   allow="encrypted-media"
   allowFullScreen={false}
   aria-hidden={true}
+  aria-label="someLabel"
   aria-labelledby="someId"
   className="myIframeClass"
   frameBorder={2}
@@ -45,6 +46,11 @@ exports[`Render iframe with title 1`] = `
       "overflow": "auto",
       "position": "relative",
       "width": "100%",
+    }
+  }
+  styles={
+    Object {
+      "background": "red",
     }
   }
   target="_self"

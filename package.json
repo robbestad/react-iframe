@@ -80,7 +80,7 @@
     "prets:typedefs": "rimraf __tests__",
     "ts:typedefs": "yarn tsc -p ts/types.tsconfig.json && mv defs/* . && rmdir defs",
     "ts:all": "yarn ts:cjs && yarn ts:es && yarn ts:typedefs && cp src/types.d.ts .",
-    "test": "jest -c ./jest.config.json",
+    "test": "jest -c ./jest.config.json src/__tests__/*.tsx",
     "lint": "eslint index.js --config .eslintrc.json",
     "release-patch": "standard-version --release-as patch",
     "release-minor": "standard-version --release-as minor",
@@ -97,10 +97,11 @@
     "collectCoverageFrom": [
       "src/**/*.{tsx,ts}",
       "!<rootDir>/node_modules/",
+      "!<rootDir>/dist/",
       "!<rootDir>/target/"
     ],
     "testMatch": [
-      "**/__tests__/*.(ts|tsx)"
+      "src/__tests__/*.tsx"
     ],
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/test_setup/ts-preprocessor.js"
