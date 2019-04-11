@@ -6,13 +6,15 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "sourceMap": true,
-    "target": "es3",
+    "target": "es2015",
     "module": "amd",
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./",
+    "sourceRoot": "./src",
+    "sourceMap": true
   },
   "include": [
-    "src/*"
+    "src"
   ],
   "exclude": [
     "node_modules"

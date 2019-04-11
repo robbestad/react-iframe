@@ -2,7 +2,7 @@ import React, { useState, createRef, FunctionComponentElement } from "react"
 // @ts-ignore
 import objectAssign from "object-assign"
 
-import { IIframe } from "../types"
+import {IIframe} from "./types"
 
 const Iframe: FunctionComponentElement<IIframe>
 	= ({
