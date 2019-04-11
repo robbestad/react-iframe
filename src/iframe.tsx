@@ -1,10 +1,10 @@
-import React, { useState, createRef, FunctionComponentElement } from "react"
+import React, { useState, createRef, ComponentType } from "react"
 // @ts-ignore
 import objectAssign from "object-assign"
 
-import {IIframe} from "./types"
+import { IIframe } from "./types"
 
-const Iframe: FunctionComponentElement<IIframe>
+const Iframe: ComponentType<IIframe>
 	= ({
 			 url, allowFullScreen, position, display,
 			 height, width, overflow, styles, onLoad,
@@ -12,7 +12,7 @@ const Iframe: FunctionComponentElement<IIframe>
 			 frameBorder, ariaHidden, sandbox, allow,
 			 className, title, ariaLabel, ariaLabelledby,
 			 name, target
-		 }) => {
+		 }: IIframe) => {
 
 	const iFrameRef = createRef()
 

@@ -11,7 +11,7 @@
     "jsx": "react",
     "baseUrl": "./",
     "sourceRoot": "./src",
-    "sourceMap": true
+    "sourceMap": false
   },
   "include": [
     "src"
