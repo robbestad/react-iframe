@@ -1,6 +1,6 @@
 {
   "name": "react-iframe",
-  "version": "1.7.10",
+  "version": "1.7.11",
   "description": "Easy peasy lemon squeezy iframes with react",
   "main": "dist/cjs/iframe.js",
   "module": "dist/es/iframe.js",
