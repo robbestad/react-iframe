@@ -1,3 +1,5 @@
+export { default as IIframe } from './src/iframe';
+
 export interface IIframe {
 	url: string
 	allowFullScreen?: boolean

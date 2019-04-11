@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react"
 import ReactDOM from "react-dom"
-import Iframe from "../index"
+import Iframe from "../dist/cjs/iframe"
 
 class Demo extends PureComponent {
 	render() {

@@ -1,17 +1,19 @@
-import React, { useState, createRef } from "react"
+import React, { useState, createRef, FunctionComponentElement } from "react"
 // @ts-ignore
 import objectAssign from "object-assign"
 
 import { IIframe } from "../types"
 
-const Iframe = ({
-									url, allowFullScreen, position, display,
-									height, width, overflow, styles, onLoad,
-									onMouseOver, onMouseOut, scrolling, id,
-									frameBorder, ariaHidden, sandbox, allow,
-									className, title, ariaLabel, ariaLabelledby,
-									name, target
-								}: IIframe) => {
+const Iframe: FunctionComponentElement<IIframe>
+	= ({
+			 url, allowFullScreen, position, display,
+			 height, width, overflow, styles, onLoad,
+			 onMouseOver, onMouseOut, scrolling, id,
+			 frameBorder, ariaHidden, sandbox, allow,
+			 className, title, ariaLabel, ariaLabelledby,
+			 name, target
+		 }) => {
+
 	const iFrameRef = createRef()
 
 	const defaultProps = objectAssign({
