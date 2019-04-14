@@ -1,5 +1,4 @@
 import React, { useState, createRef, ComponentType } from "react"
-// @ts-ignore
 import objectAssign from "object-assign"
 
 import { IIframe } from "./types"
@@ -11,7 +10,7 @@ const Iframe: ComponentType<IIframe>
 			 onMouseOver, onMouseOut, scrolling, id,
 			 frameBorder, ariaHidden, sandbox, allow,
 			 className, title, ariaLabel, ariaLabelledby,
-			 name, target
+			 name, target, loading
 		 }: IIframe) => {
 
 	const iFrameRef = createRef()
@@ -32,6 +31,7 @@ const Iframe: ComponentType<IIframe>
 		frameBorder: frameBorder || 0,
 		height: height || "100%",
 		sandbox: sandbox || null,
+		loading: loading || null,
 		styles: styles || null,
 		name: name || null,
 		className: className || null,

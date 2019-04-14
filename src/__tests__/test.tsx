@@ -24,6 +24,7 @@ test("Render iframe with title", () => {
 						className="myIframeClass"
 						frameBorder={2}
 						overflow="auto"
+						loading="eager"
 						onLoad={()=>{console.log("hello")}}
 						onMouseOut={()=>{console.log("goodbye")}}
 						onMouseOver={()=>{console.log("hi")}}
