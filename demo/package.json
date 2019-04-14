@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
+    "prestart":"cp ../dist/es/iframe.js iframe.js",
     "start": "webpack-dev-server --open"
   },
   "license": "MIT",
