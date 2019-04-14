@@ -5,7 +5,7 @@ export interface IIframe {
 	display?: "block" | "none" | "inline",
 	height?: string,
 	width?: string,
-	loading?: "auto" | "eader" | "lazy",
+	loading?: "auto" | "eager" | "lazy",
 	target?: string,
 	overflow?: string,
 	styles?: object,
