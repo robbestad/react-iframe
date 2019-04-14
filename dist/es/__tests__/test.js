@@ -1,13 +1,13 @@
 import React from "react"
 import Iframe from "../iframe"
 import renderer from "react-test-renderer"
-test("Render default iframe", () => {
-	const component = renderer.create(React.createElement(Iframe, { position: "relative", url: "http://www.foobar.com" }))
-	let tree = component.toJSON()
+test("Render default iframe", function() {
+	var component = renderer.create(React.createElement(Iframe, { position: "relative", url: "http://www.foobar.com" }))
+	var tree = component.toJSON()
 	expect(tree).toMatchSnapshot()
 })
-test("Render iframe with title", () => {
-	const component = renderer.create(
+test("Render iframe with title", function() {
+	var component = renderer.create(
 		React.createElement(Iframe, {
 			position: "relative",
 			title: "A foobared iframe",
@@ -21,13 +21,13 @@ test("Render iframe with title", () => {
 			className: "myIframeClass",
 			frameBorder: 2,
 			overflow: "auto",
-			onLoad: () => {
+			onLoad: function() {
 				console.log("hello")
 			},
-			onMouseOut: () => {
+			onMouseOut: function() {
 				console.log("goodbye")
 			},
-			onMouseOver: () => {
+			onMouseOver: function() {
 				console.log("hi")
 			},
 			display: "inline-block",
@@ -38,6 +38,6 @@ test("Render iframe with title", () => {
 			target: "_self"
 		})
 	)
-	let tree = component.toJSON()
+	var tree = component.toJSON()
 	expect(tree).toMatchSnapshot()
 })
