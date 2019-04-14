@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.15](https://github.com/svenanders/react-iframe/compare/v1.7.14...v1.7.15) (2019-04-14)
+
+
+### Bug Fixes
+
+* compile to es5 ([aa6620a](https://github.com/svenanders/react-iframe/commit/aa6620a))
+
+
+
 ## [1.7.14](https://github.com/svenanders/react-iframe/compare/v1.7.13...v1.7.14) (2019-04-14)
 
 
