@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.16](https://github.com/svenanders/react-iframe/compare/v1.7.15...v1.7.16) (2019-04-14)
+
+
+### Bug Fixes
+
+* actually add the new loading property ([df1dcdd](https://github.com/svenanders/react-iframe/commit/df1dcdd))
+
+
+
 ## [1.7.15](https://github.com/svenanders/react-iframe/compare/v1.7.14...v1.7.15) (2019-04-14)
 
 
