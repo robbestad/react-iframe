@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.8.0](https://github.com/svenanders/react-iframe/compare/v1.7.16...v1.8.0) (2019-04-14)
+
+
+### Bug Fixes
+
+* add some lines about this lib vs native <iframe> ([e64bd0a](https://github.com/svenanders/react-iframe/commit/e64bd0a))
+
+
+### Features
+
+* deprecates attributes according to HTML5 spec, sets new default values ([e1c6a62](https://github.com/svenanders/react-iframe/commit/e1c6a62))
+
+
+
 ## [1.7.16](https://github.com/svenanders/react-iframe/compare/v1.7.15...v1.7.16) (2019-04-14)
 
 
