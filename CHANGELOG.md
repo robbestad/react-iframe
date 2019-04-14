@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.13](https://github.com/svenanders/react-iframe/compare/v1.7.12...v1.7.13) (2019-04-14)
+
+
+### Bug Fixes
+
+* embarrassing typo ([a26de77](https://github.com/svenanders/react-iframe/commit/a26de77))
+
+
+
 ## [1.7.12](https://github.com/svenanders/react-iframe/compare/v1.7.11...v1.7.12) (2019-04-14)
 
 
