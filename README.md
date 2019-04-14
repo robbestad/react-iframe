@@ -16,25 +16,26 @@ import Iframe from 'react-iframe'
         id="myId"
         className="myClassname"
         display="initial"
-        position="relative"
-        allowFullScreen/>
+        position="relative"/>
 ```
-            
+
 ### Properties
 
 **url** **(required)** - *string* the iframe url.
 
 _all other attributes are optional_
 
-**scrolling** - *string* not set if if not provided.
+**src** - *string* if set, overrides _url_.
+
+**scrolling** - *string* not set if if not provided (deprecated in HTML5).
 
 **overflow** - *string* default to "hidden".
 
-**loading** - *string* not added to DOM if not provided
+**loading** - *string* (not added to DOM if not provided).
 
-**frameBorder** - *number* default to "0".
+**frameBorder** - *number* default to "0" (deprecated in HTML5).
 
-**position** - *string* defaults to "absolute".
+**position** - *string* (not added to DOM if not provided).
 
 **id** - *string* if set, adds the id parameter with the given value.
 
@@ -46,11 +47,11 @@ _all other attributes are optional_
 
 **width** - *string* (1px > any number above 0, or 1% to 100%)
 
-**allowFullScreen** - if set, applies the allowFullScreen param
+**allowFullScreen** - if set, applies the allowFullScreen param (deprecated in HTML5). If set, *adds allow="fullscreen"*.
 
 **sandbox** - add optional sandbox values ("allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation")
 
-**allow** - add optional [_allow_](https://dev.chromium.org/Home/chromium-security/deprecating-permissions-in-cross-origin-iframes#TOC-To-continue-to-use-permissions-from-iframes-on-your-website) values ("geolocation microphone camera midi encrypted-media")
+**allow** - add optional [_allow_](https://dev.chromium.org/Home/chromium-security/deprecating-permissions-in-cross-origin-iframes#TOC-To-continue-to-use-permissions-from-iframes-on-your-website) values ("geolocation microphone camera midi encrypted-media & more")
 
 **styles** - add any additional styles here. Will (intentionally) override any of the props 
 above. For instance:
@@ -61,8 +62,7 @@ above. For instance:
             id="myId"
             className="myClassname"
             height="100%"
-            styles={{height: "25px"}}
-            allowFullScreen/>
+            styles={{height: "25px"}}/>
 ```
 
 will set the height to 25px even though it was specified as 100% in the props.

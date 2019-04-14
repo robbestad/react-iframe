@@ -2,35 +2,23 @@
 
 exports[`Render default iframe 1`] = `
 <iframe
-  allowFullScreen={false}
-  frameBorder={0}
-  height="100%"
-  scrolling="no"
   src="http://www.foobar.com"
   style={
     Object {
       "display": "block",
-      "height": "100%",
-      "overflow": "hidden",
       "position": "relative",
-      "width": "100%",
     }
   }
-  target="_parent"
-  width="100%"
 />
 `;
 
 exports[`Render iframe with title 1`] = `
 <iframe
   allow="encrypted-media"
-  allowFullScreen={false}
   aria-hidden={true}
   aria-label="someLabel"
   aria-labelledby="someId"
   className="myIframeClass"
-  frameBorder={2}
-  height="100%"
   id="myIframeId"
   loading="eager"
   name="My Iframe name"
@@ -39,14 +27,13 @@ exports[`Render iframe with title 1`] = `
   onMouseOver={[Function]}
   sandbox="allow-scripts"
   scrolling="yes"
-  src="http://www.foobar.com"
+  src="http://www.foo.com"
   style={
     Object {
+      "border": 0,
       "display": "inline-block",
-      "height": "100%",
       "overflow": "auto",
       "position": "relative",
-      "width": "100%",
     }
   }
   styles={
@@ -56,6 +43,31 @@ exports[`Render iframe with title 1`] = `
   }
   target="_self"
   title="A foobared iframe"
-  width="100%"
+/>
+`;
+
+exports[`Render with allow attribute 1`] = `
+<iframe
+  allow="fullscreen autoplay"
+  src="http://www.foobar.com"
+  style={
+    Object {
+      "border": 1,
+      "display": "block",
+    }
+  }
+/>
+`;
+
+exports[`Render with allowFullscreen bool 1`] = `
+<iframe
+  allow="fullscreen"
+  src="http://www.foobar.com"
+  style={
+    Object {
+      "border": 1,
+      "display": "block",
+    }
+  }
 />
 `;

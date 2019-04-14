@@ -13,7 +13,6 @@ var __assign =
 		return __assign.apply(this, arguments)
 	}
 import React, { createRef } from "react"
-// @ts-ignore
 import objectAssign from "object-assign"
 var Iframe = function(_a) {
 	var url = _a.url,
@@ -38,7 +37,8 @@ var Iframe = function(_a) {
 		ariaLabel = _a.ariaLabel,
 		ariaLabelledby = _a.ariaLabelledby,
 		name = _a.name,
-		target = _a.target
+		target = _a.target,
+		loading = _a.loading
 	var iFrameRef = createRef()
 	var defaultProps = objectAssign({
 		ref: iFrameRef,
@@ -56,6 +56,7 @@ var Iframe = function(_a) {
 		frameBorder: frameBorder || 0,
 		height: height || "100%",
 		sandbox: sandbox || null,
+		loading: loading || null,
 		styles: styles || null,
 		name: name || null,
 		className: className || null,
