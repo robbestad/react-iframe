@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.12](https://github.com/svenanders/react-iframe/compare/v1.7.11...v1.7.12) (2019-04-14)
+
+
+### Bug Fixes
+
+* add loading and target attributes ([9577409](https://github.com/svenanders/react-iframe/commit/9577409))
+
+
+
 ## [1.7.11](https://github.com/svenanders/react-iframe/compare/v1.7.10...v1.7.11) (2019-04-11)
 
 
