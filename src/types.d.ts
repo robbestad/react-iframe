@@ -26,5 +26,6 @@ export interface IIframe {
 	sandbox?: "allow-forms" | "allow-modals" | "allow-orientation-lock" | "allow-pointer-lock" | "allow-popups" | "allow-popups-to-escape-sandbox" | "allow-presentation" | "allow-same-origin" | "allow-scripts" | "allow-storage-access-by-user-activation" | "allow-top-navigation" | "allow-top-navigation-by-user-activation",
 	allow?: string,
 	className?: string,
-	title?: string
+  title?: string,
+  key?: string
 }
