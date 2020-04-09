@@ -1,3 +1,5 @@
+import React from "react"
+
 export interface IIframe {
 	url: string,
 	src?: string,
@@ -27,4 +29,5 @@ export interface IIframe {
 	allow?: string,
 	className?: string,
 	title?: string
+	children?: React.ReactNode,
 }

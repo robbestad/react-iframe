@@ -11,7 +11,7 @@ const Iframe: ComponentType<IIframe>
 			 frameBorder, ariaHidden, sandbox, allow,
 			 className, title, ariaLabel, ariaLabelledby,
 			 name, target, loading, importance, referrerpolicy,
-			 allowpaymentrequest, src
+			 allowpaymentrequest, src, children
 		 }: IIframe) => {
 
 	const defaultProps = objectAssign({
@@ -70,7 +70,9 @@ const Iframe: ComponentType<IIframe>
 			props.style.border = frameBorder
 		}
 	}
-	return <iframe {...props}/>
+	return <iframe {...props}>
+	{children}
+</iframe>
 
 }
 
