@@ -1,3 +1,5 @@
+type SandboxAttributeValue = "allow-downloads-without-user-activation" | "allow-forms" | "allow-modals" | "allow-orientation-lock" | "allow-pointer-lock" | "allow-popups" | "allow-popups-to-escape-sandbox" | "allow-presentation" | "allow-same-origin" | "allow-scripts" | "allow-storage-access-by-user-activation" | "allow-top-navigation" | "allow-top-navigation-by-user-activation";
+
 export interface IIframe {
 	url: string,
 	src?: string,
@@ -23,7 +25,7 @@ export interface IIframe {
 	ariaHidden?: boolean,
 	ariaLabel?: string,
 	ariaLabelledby?: string,
-	sandbox?: "allow-forms" | "allow-modals" | "allow-orientation-lock" | "allow-pointer-lock" | "allow-popups" | "allow-popups-to-escape-sandbox" | "allow-presentation" | "allow-same-origin" | "allow-scripts" | "allow-storage-access-by-user-activation" | "allow-top-navigation" | "allow-top-navigation-by-user-activation",
+	sandbox?: SandboxAttributeValue | SandboxAttributeValue[],
 	allow?: string,
 	className?: string,
 	title?: string
