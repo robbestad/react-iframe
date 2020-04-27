@@ -19,7 +19,7 @@ const Iframe: ComponentType<IIframe>
 		target: target || null,
 		style: {
 			position: position || null,
-			display: display || "block",
+			display: display || "initial",
 			overflow: overflow || null
 		},
 		scrolling: scrolling || null,
