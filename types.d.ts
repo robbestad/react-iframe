@@ -5,7 +5,7 @@ export interface IIframe {
 	src?: string,
 	allowFullScreen?: boolean,
 	position?: "relative" | "absolute" | "fixed" | "sticky" | "static" | "inherit" | "initial" | "unset",
-	display?: "block" | "none" | "inline",
+	display?: "block" | "none" | "inline" | "initial",
 	height?: string,
 	width?: string,
 	loading?: "auto" | "eager" | "lazy",
