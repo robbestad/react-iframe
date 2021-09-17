@@ -56,6 +56,17 @@ const Iframe: ComponentType<IIframe>
 		}
 	}
 
+	if (props.styles) {
+		for (let key of Object.keys(props.styles)) {
+			if (props.styles.hasOwnProperty(key)) {
+				props.style[key] = props.styles[key];
+			}
+			if (Object.keys(props.styles).pop() == key) {
+				delete props.styles;
+			}
+		}
+	}
+
 	if(allowFullScreen){
 		if("allow" in props){
 			const currentAllow = props.allow.replace("fullscreen","")

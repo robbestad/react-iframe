@@ -30,15 +30,11 @@ exports[`Render iframe with title 1`] = `
   src="http://www.foo.com"
   style={
     Object {
+      "background": "red",
       "border": 0,
       "display": "inline-block",
       "overflow": "auto",
       "position": "relative",
-    }
-  }
-  styles={
-    Object {
-      "background": "red",
     }
   }
   target="_self"
