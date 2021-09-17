@@ -82,8 +82,12 @@
     "ts:all": "yarn ts:cjs && yarn ts:es && yarn ts:typedefs && cp src/types.d.ts .",
     "test": "jest -c ./jest.config.json src/__tests__/*.tsx",
     "lint": "eslint index.js --config .eslintrc.json",
-    "release": "standard-version",
-    "precommit": "lint-staged"
+    "release": "standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "license": "ISC",
   "jest": {
