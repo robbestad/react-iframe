@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.1](https://github.com/svenanders/react-iframe/compare/v1.8.0...v1.8.1) (2022-09-26)
+
+
+### Bug Fixes
+
+* merge styles into style ([93d9bfe](https://github.com/svenanders/react-iframe/commit/93d9bfecf0c5d086e7c3bd2d5721ee0a6b657675))
+
+
+
 # [1.8.0](https://github.com/svenanders/react-iframe/compare/v1.7.16...v1.8.0) (2019-04-14)
 
 
