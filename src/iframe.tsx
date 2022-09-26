@@ -11,7 +11,7 @@ const Iframe: ComponentType<IIframe>
 			 frameBorder, ariaHidden, sandbox, allow,
 			 className, title, ariaLabel, ariaLabelledby,
 			 name, target, loading, importance, referrerpolicy,
-			 allowpaymentrequest, src
+       allowpaymentrequest, src, key
 		 }: IIframe) => {
 
 	const defaultProps = objectAssign({
@@ -41,7 +41,8 @@ const Iframe: ComponentType<IIframe>
 		height: height || null,
 		onLoad: onLoad || null,
 		onMouseOver: onMouseOver || null,
-		onMouseOut: onMouseOut || null
+    onMouseOut: onMouseOut || null,
+    key: key || "iframe"
 	})
 	let props = Object.create(null)
 	for (let prop of Object.keys(defaultProps)) {
