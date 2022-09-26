@@ -46,7 +46,7 @@
     "react-test-renderer": "^16.8.6",
     "react-testing-library": "^6.1.2",
     "rimraf": "^2.6.3",
-    "standard-version": "^5.0.2",
+    "standard-version": "^9.5.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.0.3",
     "tslint": "^5.15.0",
