@@ -15,7 +15,7 @@ import Iframe from 'react-iframe'
         height="450px"
         id="myId"
         className="myClassname"
-        display="initial"
+        display="block"
         position="relative"/>
 ```
 
