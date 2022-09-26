@@ -16,7 +16,7 @@
     "react-dom": "^16.8.6",
     "react-iframe": "^1.7.0",
     "webpack": "^4.29.6",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.11.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.4.3",
