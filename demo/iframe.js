@@ -36,13 +36,13 @@ const Iframe = ({
 		target: target || null,
 		style: {
 			position: position || null,
-			display: display || "block",
+			display: display || "initial",
 			overflow: overflow || null
 		},
 		scrolling: scrolling || null,
 		allowpaymentrequest: allowpaymentrequest || null,
 		importance: importance || null,
-		sandbox: sandbox || null,
+		sandbox: (sandbox && [...sandbox].join(" ")) || null,
 		loading: loading || null,
 		styles: styles || null,
 		name: name || null,
