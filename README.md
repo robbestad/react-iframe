@@ -10,11 +10,11 @@ The component is fully typescript-supported.
 
 ```jsx
 import Iframe from 'react-iframe'
-<Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
-        width="450px"
-        height="450px"
-        id="myId"
-        className="myClassname"
+<Iframe url="https://www.sdrive.app/embed/1ptBQD"
+        width="640px"
+        height="320px"
+        id=""
+        className=""
         display="block"
         position="relative"/>
 ```

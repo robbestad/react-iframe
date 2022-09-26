@@ -7,11 +7,11 @@ class Demo extends PureComponent {
 		return (
 			<Iframe
 				url="https://www.sdrive.app/embed/1ptBQD"
-				width="450px"
-				height="450px"
-				id="myId"
-				className="myClassname"
-				display="initial"
+				width="640px"
+				height="320px"
+				id=""
+				className=""
+				display="block"
 				position="relative"
 				allowFullScreen
 			/>
