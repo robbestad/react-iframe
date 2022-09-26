@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "target": "es5",
+    "target": "es2015",
     "module": "amd",
     "jsx": "react",
     "baseUrl": ""

@@ -32,7 +32,7 @@ exports[`Render iframe with title 1`] = `
     Object {
       "background": "red",
       "border": 0,
-      "display": "inline-block",
+      "display": "block",
       "overflow": "auto",
       "position": "relative",
     }
