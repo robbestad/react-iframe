@@ -29,7 +29,7 @@ test("Render iframe with title", () => {
 						onLoad={()=>{console.log("hello")}}
 						onMouseOut={()=>{console.log("goodbye")}}
 						onMouseOver={()=>{console.log("hi")}}
-						display="inline-block"
+						display="block"
 						id="myIframeId"
 						name="My Iframe name"
 						scrolling="yes"
