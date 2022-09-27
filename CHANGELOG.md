@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.3](https://github.com/svenanders/react-iframe/compare/v1.8.2...v1.8.3) (2022-09-27)
+
+
+
 ## [1.8.2](https://github.com/svenanders/react-iframe/compare/v1.8.1...v1.8.2) (2022-09-26)
 
 
