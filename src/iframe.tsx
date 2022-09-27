@@ -50,6 +50,7 @@ const Iframe: ComponentType<IIframe> = ({
 		styles: styles || null,
 		name: name || null,
 		className: className || null,
+		allowFullscreen: "allowFullScreen" || null,
 		referrerpolicy: referrerpolicy || null,
 		title: title || null,
 		allow: allow || null,

@@ -17,6 +17,7 @@ const Iframe = ({ url, allowFullScreen, position, display, height, width, overfl
         styles: styles || null,
         name: name || null,
         className: className || null,
+        allowFullscreen: "allowFullScreen" || null,
         referrerpolicy: referrerpolicy || null,
         title: title || null,
         allow: allow || null,
@@ -66,6 +67,6 @@ const Iframe = ({ url, allowFullScreen, position, display, height, width, overfl
             props.style.border = frameBorder;
         }
     }
-    return React.createElement("iframe", Object.assign({ allowfullscreen: "allowfullscreen" }, props));
+    return React.createElement("iframe", Object.assign({}, props));
 };
 export default Iframe;

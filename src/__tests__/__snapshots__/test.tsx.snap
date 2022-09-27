@@ -2,6 +2,7 @@
 
 exports[`Render default iframe 1`] = `
 <iframe
+  allowFullscreen="allowFullScreen"
   src="http://www.foobar.com"
   style={
     Object {
@@ -15,6 +16,7 @@ exports[`Render default iframe 1`] = `
 exports[`Render iframe with title 1`] = `
 <iframe
   allow="encrypted-media"
+  allowFullscreen="allowFullScreen"
   aria-hidden={true}
   aria-label="someLabel"
   aria-labelledby="someId"
@@ -45,6 +47,7 @@ exports[`Render iframe with title 1`] = `
 exports[`Render with allow attribute 1`] = `
 <iframe
   allow="fullscreen autoplay"
+  allowFullscreen="allowFullScreen"
   src="http://www.foobar.com"
   style={
     Object {
@@ -58,6 +61,7 @@ exports[`Render with allow attribute 1`] = `
 exports[`Render with allowFullscreen bool 1`] = `
 <iframe
   allow="fullscreen"
+  allowFullscreen="allowFullScreen"
   src="http://www.foobar.com"
   style={
     Object {
