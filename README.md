@@ -49,7 +49,7 @@ _all other attributes are optional_
 
 **allowFullScreen** - if set, applies the allowFullScreen param (deprecated in HTML5). If set, *adds allow="fullscreen"*.
 
-**sandbox** - add optional sandbox values ("allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation")
+**sandbox** - add optional sandbox values. For single value, add as string. For multiple values, add as array ({"allow-scripts", "allow-same-origin"}). Valid values are `"allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"`
 
 **allow** - add optional [_allow_](https://dev.chromium.org/Home/chromium-security/deprecating-permissions-in-cross-origin-iframes#TOC-To-continue-to-use-permissions-from-iframes-on-your-website) values ("geolocation microphone camera midi encrypted-media & more")
 

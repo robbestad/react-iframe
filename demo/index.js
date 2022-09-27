@@ -8,9 +8,11 @@ class Demo extends PureComponent {
 			<Iframe
 				url="https://www.sdrive.app/embed/1ptBQD"
 				width="640px"
+				sandbox="aasda"
 				height="320px"
 				id=""
 				className=""
+			 sandbox={["allow-same-origin", "allow-scripts"]}
 				display="block"
 				position="relative"
 				allowFullScreen
