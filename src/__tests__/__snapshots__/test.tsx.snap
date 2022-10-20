@@ -58,7 +58,7 @@ exports[`Render with allow attribute 1`] = `
 />
 `;
 
-exports[`Render with allowFullscreen bool 1`] = `
+exports[`Render with allowFullScreen bool 1`] = `
 <iframe
   allow="fullscreen"
   allowFullScreen="allowFullScreen"
