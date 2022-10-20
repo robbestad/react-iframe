@@ -42,7 +42,7 @@ test("Render iframe with title", () => {
 })
 
 
-test("Render with allowFullscreen bool", () => {
+test("Render with allowFullScreen bool", () => {
 	const component = renderer.create(
 		<Iframe allowFullScreen={false}
 				allow="fullscreen"
