@@ -1,3 +1,4 @@
+import type React from 'react';
 type SandboxAttributeValue = "allow-downloads-without-user-activation" | "allow-forms" | "allow-modals" | "allow-orientation-lock" | "allow-pointer-lock" | "allow-popups" | "allow-popups-to-escape-sandbox" | "allow-presentation" | "allow-same-origin" | "allow-scripts" | "allow-storage-access-by-user-activation" | "allow-top-navigation" | "allow-top-navigation-by-user-activation";
 
 export interface IIframe {
@@ -19,6 +20,7 @@ export interface IIframe {
 	onLoad?: () => void,
 	onMouseOver?: () => void,
 	onMouseOut?: () => void,
+	onError?: (event: React.SyntheticEvent<HTMLIFrameElement, Event>) => void,
 	frameBorder?: number,
 	scrolling?: "auto" | "yes" | "no",
 	id?: string,

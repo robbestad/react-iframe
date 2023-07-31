@@ -15,6 +15,7 @@ const Iframe: ComponentType<IIframe> = ({
 	onLoad,
 	onMouseOver,
 	onMouseOut,
+	onError,
 	scrolling,
 	id,
 	frameBorder,
@@ -63,6 +64,7 @@ const Iframe: ComponentType<IIframe> = ({
 		onLoad: onLoad || null,
 		onMouseOver: onMouseOver || null,
 		onMouseOut: onMouseOut || null,
+		onError: onError || null,
 		key: key || "iframe"
 	})
 	let props = Object.create(null)
