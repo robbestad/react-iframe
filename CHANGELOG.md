@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# 1.9.0 (2023-09-04)
+
+
+### Bug Fixes
+
+* actually add the new loading property ([df1dcdd](https://github.com/svenanders/react-iframe/commit/df1dcdd37c5da057499b43380521ae3692b4af23))
+* add loading and target attributes ([9577409](https://github.com/svenanders/react-iframe/commit/9577409c2336d59983a932e9cf52bc91a69e534e))
+* add scrolling prop ([dc376bb](https://github.com/svenanders/react-iframe/commit/dc376bb0d06b61c3fa771f1efceb66fc4ce42fee))
+* add some lines about this lib vs native <iframe> ([e64bd0a](https://github.com/svenanders/react-iframe/commit/e64bd0a832c00b02931bf18ee1316bd237109df8))
+* compile to es5 ([aa6620a](https://github.com/svenanders/react-iframe/commit/aa6620af3335b6485135d5947e924b2d38f83c26))
+* embarrassing typo ([a26de77](https://github.com/svenanders/react-iframe/commit/a26de7779a8ee14c3273c9f1279c575740d265fd))
+* merge PR from colmbrady, and update outdated dependencies ([67fa144](https://github.com/svenanders/react-iframe/commit/67fa144b236396f0a8537f1de54e93d9b42eaa5d))
+* merge styles into style ([93d9bfe](https://github.com/svenanders/react-iframe/commit/93d9bfecf0c5d086e7c3bd2d5721ee0a6b657675))
+
+
+### Features
+
+* deprecates attributes according to HTML5 spec, sets new default values ([e1c6a62](https://github.com/svenanders/react-iframe/commit/e1c6a62bf64ce7092a1ab3fe1875eaa8580703a5))
+
+
+
 ## [1.8.5](https://github.com/svenanders/react-iframe/compare/v1.8.4...v1.8.5) (2022-10-20)
 
 
