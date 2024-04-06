@@ -90,9 +90,8 @@ const Iframe: ComponentType<IIframe> = ({
 	}
 
 	if (allowFullScreen) {
-		if ("allow" in props) {
-			const currentAllow = props.allow.replace("fullscreen", "")
-			props.allow = `fullscreen ${currentAllow.trim()}`.trim()
+		if ("allow" in props && !props.allow.includes("fullscreen")) {
+			props.allow = `fullscreen; ${props.allow.trim()}`;
 		} else {
 			props.allow = "fullscreen"
 		}
