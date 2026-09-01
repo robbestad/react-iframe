@@ -6,7 +6,6 @@ import {
 	type CSSProperties,
 	type IframeHTMLAttributes,
 	type Ref,
-	type SyntheticEvent,
 } from "react"
 
 import { mergeAllow } from "./allow"
@@ -22,7 +21,10 @@ function assignRef<T>(ref: Ref<T> | undefined, value: T | null) {
 
 type FetchPriority = "high" | "low" | "auto"
 
-type NativeIframeProps = Omit<IframeHTMLAttributes<HTMLIFrameElement>, "sandbox" | "src" | "srcDoc">
+type NativeIframeProps = Omit<
+	IframeHTMLAttributes<HTMLIFrameElement>,
+	"sandbox" | "src" | "srcDoc" | "onError"
+>
 
 type LayoutShortcuts = {
 	/** Applied as `style.display` when set. */
@@ -68,6 +70,11 @@ type Conveniences = LayoutShortcuts & {
 	 * @deprecated Use `allow="payment"`.
 	 */
 	allowpaymentrequest?: boolean
+	/**
+	 * Native `error` event. React does not emit iframe `onError` as a
+	 * synthetic event (only img / link / media).
+	 */
+	onError?: (event: Event) => void
 }
 
 type WithUrl = { url: string; src?: string; srcDoc?: string }
@@ -111,26 +118,35 @@ export const Iframe = forwardRef<HTMLIFrameElement, IframeProps>(function Iframe
 	ref,
 ) {
 	const nodeRef = useRef<HTMLIFrameElement | null>(null)
-	const setRef = useCallback(
-		(node: HTMLIFrameElement | null) => {
-			nodeRef.current = node
-			assignRef(ref, node)
-		},
-		[ref],
-	)
+	const onErrorRef = useRef(onError)
+
+	useLayoutEffect(() => {
+		onErrorRef.current = onError
+	}, [onError])
+
+	// Keep the host ref callback stable so React does not call it with
+	// `null` on every parent render when `ref` is an inline function.
+	const setRef = useCallback((node: HTMLIFrameElement | null) => {
+		nodeRef.current = node
+	}, [])
+
+	useLayoutEffect(() => {
+		assignRef(ref, nodeRef.current)
+		return () => assignRef(ref, null)
+	}, [ref])
 
 	useLayoutEffect(() => {
 		const node = nodeRef.current
-		if (!node || !onError) {
+		if (!node) {
 			return
 		}
 		// React attaches iframe `load` but not `error` (img/link/media only).
 		const listener = (event: Event) => {
-			onError(event as unknown as SyntheticEvent<HTMLIFrameElement, Event>)
+			onErrorRef.current?.(event)
 		}
 		node.addEventListener("error", listener)
 		return () => node.removeEventListener("error", listener)
-	}, [onError])
+	}, [])
 
 	const extras: string[] = []
 	if (allowFullScreen) {

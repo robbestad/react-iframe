@@ -1,5 +1,5 @@
 export { Iframe, Iframe as default } from "./iframe"
 export type { IframeProps } from "./iframe"
 export { useIframeMessage, postToIframe } from "./use-iframe-message"
-export type { UseIframeMessageOptions } from "./use-iframe-message"
+export type { IframeMessageSource, UseIframeMessageOptions } from "./use-iframe-message"
 export type { SandboxToken, SandboxValue } from "./sandbox"

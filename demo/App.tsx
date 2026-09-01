@@ -1,8 +1,21 @@
 import { useRef, useState } from "react"
 import Iframe, { postToIframe, useIframeMessage } from "react-iframe"
 
-const YOUTUBE_ALLOW =
-	"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+const VIDEO_SRC = "https://media.w3.org/2010/05/sintel/trailer.mp4"
+
+const VIDEO_DOC = `<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html, body { margin: 0; height: 100%; background: #000; }
+      video { display: block; width: 100%; height: 100%; object-fit: contain; }
+    </style>
+  </head>
+  <body>
+    <video controls playsinline preload="metadata" src="${VIDEO_SRC}"></video>
+  </body>
+</html>`
 
 const SRC_DOC = `<!doctype html>
 <html>
@@ -55,19 +68,22 @@ export function App() {
 	const childRef = useRef<HTMLIFrameElement>(null)
 	const [messages, setMessages] = useState<string[]>([])
 
-	useIframeMessage((event) => {
-		if (event.data?.type === "ping") {
-			setMessages((current) => [`ping @ ${event.data.at}`, ...current].slice(0, 4))
-			postToIframe(childRef.current, { type: "pong", at: Date.now() })
-		}
-	})
+	useIframeMessage(
+		(event) => {
+			if (event.data?.type === "ping") {
+				setMessages((current) => [`ping @ ${event.data.at}`, ...current].slice(0, 4))
+				postToIframe(childRef.current, { type: "pong", at: Date.now() }, "*")
+			}
+		},
+		{ source: childRef, origin: "null" },
+	)
 
 	return (
 		<div className="page">
 			<header className="hero">
 				<p className="eyebrow">react-iframe 2.0</p>
 				<h1>
-					A thin, typed iframe
+					A zero-dependency, typed iframe
 					<br />
 					for React 18 and 19.
 				</h1>
@@ -82,21 +98,20 @@ export function App() {
 			</header>
 
 			<section className="grid">
-				<article className="card" id="youtube">
+				<article className="card" id="video">
 					<header>
-						<h2>YouTube embed</h2>
+						<h2>Video embed</h2>
 						<p>
-							<code>allowFullScreen</code> merges into Permissions-Policy <code>allow</code> with
-							semicolons.
+							An HTML5 <code>video</code> inside the frame. <code>allowFullScreen</code> merges into
+							Permissions-Policy <code>allow</code> with semicolons.
 						</p>
 					</header>
 					<Iframe
-						url="https://www.youtube.com/embed/dQw4w9WgXcQ"
-						title="YouTube embed"
+						srcDoc={VIDEO_DOC}
+						title="Sintel trailer"
 						width="100%"
 						height="320"
-						loading="lazy"
-						allow={YOUTUBE_ALLOW}
+						allow="autoplay; encrypted-media"
 						allowFullScreen
 						style={{ border: 0, background: "#000" }}
 					/>

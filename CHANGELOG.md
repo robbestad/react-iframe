@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented in this file.
 
+## [2.0.1](https://github.com/svenanders/react-iframe/compare/v2.0.0...v2.0.1) (2026-09-02)
+
+### Fixes
+
+* **onError:** pass the native DOM `Event` instead of casting it to a React synthetic event. The listener is kept stable across handler identity changes.
+* **refs:** keep the host ref callback stable so an inline `ref` does not retrigger `null` / node on every parent render.
+* **useIframeMessage:** optional `source` filter matches `event.source` to the iframe's `contentWindow`. `origin: "null"` matches `srcDoc` frames.
+* **postToIframe:** `targetOrigin` is required. Pass the child origin, or `"*"` for `srcDoc` / opaque origins (browsers reject `"null"` as a target origin).
+
 ## [2.0.0](https://github.com/svenanders/react-iframe/compare/v1.8.5...v2.0.0) (2026-09-01)
 
 ### Breaking

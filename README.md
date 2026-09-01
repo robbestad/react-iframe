@@ -1,6 +1,6 @@
 # react-iframe
 
-A thin, typed React wrapper around [`<iframe>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
+Zero-dependency typed React wrapper around [`<iframe>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
 
 ```bash
 npm install react-iframe
@@ -10,13 +10,12 @@ npm install react-iframe
 import Iframe from "react-iframe"
 
 ;<Iframe
-	url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+	url="https://media.w3.org/2010/05/sintel/trailer.mp4"
 	width="100%"
 	height="320"
-	loading="lazy"
-	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+	allow="autoplay; fullscreen"
 	allowFullScreen
-	title="Demo"
+	title="Sintel trailer"
 />
 ```
 
@@ -57,7 +56,7 @@ function Widget() {
 				postToIframe(ref.current, { type: "init" }, event.origin)
 			}
 		},
-		{ origin: "https://widget.example" },
+		{ origin: "https://widget.example", source: ref },
 	)
 
 	return (
@@ -68,7 +67,9 @@ function Widget() {
 
 `ref.current` is the DOM iframe. Same-origin frames expose `contentDocument` / `contentWindow`. Cross-origin frames do not — use `postMessage`.
 
-`onError` is attached as a native listener. React itself only wires iframe `load`, not `error`.
+`onError` is attached as a native listener and receives a DOM `Event`, not a React synthetic event. React itself only wires iframe `load`, not `error`.
+
+`useIframeMessage` can filter by `origin` and by `source` (the iframe node, a ref, or a `Window`). Prefer `source` when more than one frame can share an origin. A `srcDoc` document has origin `"null"` (the string); pass `{ origin: "null" }` or filter with `source`. `postToIframe` requires a `targetOrigin` — the child origin, or `"*"` for `srcDoc` (the browser rejects `"null"` as a target origin).
 
 ## Permissions policy (`allow`)
 
@@ -98,6 +99,9 @@ No. `<iframe src>` cannot attach custom HTTP headers. Use a same-origin proxy, c
 **Safari never fires `onLoad` for my payment frame.**  
 That is a UA quirk. Have the child document `postMessage` when it is ready, and listen with `useIframeMessage`.
 
+**Why is `event.origin` `"null"` for `srcDoc`?**  
+A `srcDoc` document is an opaque origin. `MessageEvent.origin` is the string `"null"`. Pass `{ origin: "null" }` to `useIframeMessage`. When posting back, use `postToIframe(iframe, message, "*")` — browsers reject `"null"` as `targetOrigin`. Filtering with `source` does not depend on that string.
+
 **PDF on iPad only shows the first page.**  
 iOS Safari’s PDF-in-iframe behavior. Use [PDF.js](https://mozilla.github.io/pdf.js/) or `<object>`/`<embed>` as a workaround.
 
@@ -121,7 +125,7 @@ Breaking changes in **2.0**:
 - `allowFullScreen` is a real boolean. It is **not** always set to the string `"allowFullScreen"`. Combined with `allow`, tokens are joined with `"; "`.
 - No default `display: initial` / `display: block`.
 - `ref` is forwarded to the `<iframe>` (this was broken since 1.7).
-- `onLoad` / `onError` receive a React synthetic event.
+- `onLoad` receives a React synthetic event. `onError` receives a native DOM `Event` (React does not synthesize iframe `error`).
 - Invalid DOM props (`target`, `key` as an HTML attribute) are no longer written onto the node.
 - The package is dual ESM/CJS with an `exports` map. Types ship from `dist/`.
 

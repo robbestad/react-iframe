@@ -121,7 +121,34 @@ describe("Iframe", () => {
 		expect(ref.current).toBeInstanceOf(HTMLIFrameElement)
 	})
 
-	it("fires onLoad and onError with the iframe as the event target", () => {
+	it("does not reset the host ref when an inline callback ref is recreated", () => {
+		const addSpy = vi.spyOn(HTMLIFrameElement.prototype, "addEventListener")
+		const { rerender, container } = render(
+			<Iframe url="https://example.com" onError={() => undefined} ref={() => undefined} />,
+		)
+		const iframe = getIframe(container)
+		const errorListeners = addSpy.mock.calls.filter((call) => call[0] === "error")
+		expect(errorListeners).toHaveLength(1)
+
+		rerender(<Iframe url="https://example.com" onError={() => undefined} ref={() => undefined} />)
+		expect(getIframe(container)).toBe(iframe)
+		expect(addSpy.mock.calls.filter((call) => call[0] === "error")).toHaveLength(1)
+		addSpy.mockRestore()
+	})
+
+	it("moves a callback ref to the new callback when the identity changes", () => {
+		const first = vi.fn()
+		const second = vi.fn()
+		const { rerender, container } = render(<Iframe url="https://example.com" ref={first} />)
+		const iframe = getIframe(container)
+		expect(first).toHaveBeenCalledWith(iframe)
+
+		rerender(<Iframe url="https://example.com" ref={second} />)
+		expect(first).toHaveBeenLastCalledWith(null)
+		expect(second).toHaveBeenCalledWith(iframe)
+	})
+
+	it("fires onLoad as a synthetic event and onError as a native Event", () => {
 		const onLoad = vi.fn()
 		const onError = vi.fn()
 		const { container } = render(
@@ -133,10 +160,29 @@ describe("Iframe", () => {
 		expect(onLoad).toHaveBeenCalledTimes(1)
 		expect(onLoad.mock.calls[0]?.[0].target).toBe(iframe)
 		expect(onLoad.mock.calls[0]?.[0].type).toBe("load")
+		expect(onLoad.mock.calls[0]?.[0]).toHaveProperty("nativeEvent")
 
 		iframe.dispatchEvent(new Event("error"))
 		expect(onError).toHaveBeenCalledTimes(1)
+		expect(onError.mock.calls[0]?.[0]).toBeInstanceOf(Event)
 		expect(onError.mock.calls[0]?.[0].target).toBe(iframe)
+		expect(onError.mock.calls[0]?.[0]).not.toHaveProperty("nativeEvent")
+	})
+
+	it("uses the latest onError without re-attaching the listener", () => {
+		const first = vi.fn()
+		const second = vi.fn()
+		const addSpy = vi.spyOn(HTMLIFrameElement.prototype, "addEventListener")
+		const { rerender, container } = render(<Iframe url="https://example.com" onError={first} />)
+		expect(addSpy.mock.calls.filter((call) => call[0] === "error")).toHaveLength(1)
+
+		rerender(<Iframe url="https://example.com" onError={second} />)
+		expect(addSpy.mock.calls.filter((call) => call[0] === "error")).toHaveLength(1)
+
+		getIframe(container).dispatchEvent(new Event("error"))
+		expect(first).not.toHaveBeenCalled()
+		expect(second).toHaveBeenCalledTimes(1)
+		addSpy.mockRestore()
 	})
 
 	it("passes native iframe attributes through", () => {
