@@ -6,15 +6,15 @@
 		"moduleResolution": "bundler",
 		"jsx": "react-jsx",
 		"strict": true,
-		"noUncheckedIndexedAccess": true,
-		"noFallthroughCasesInSwitch": true,
 		"skipLibCheck": true,
-		"esModuleInterop": true,
+		"noEmit": true,
 		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
-		"noEmit": true,
-		"declaration": true,
-		"ignoreDeprecations": "6.0"
+		"types": ["vite/client"],
+		"baseUrl": ".",
+		"paths": {
+			"react-iframe": ["../src/index.ts"]
+		}
 	},
-	"include": ["src"]
+	"include": ["./**/*.ts", "./**/*.tsx"]
 }

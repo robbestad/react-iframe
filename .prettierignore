@@ -1,0 +1,7 @@
+dist
+coverage
+node_modules
+demo/dist
+demo/node_modules
+*.lock
+CHANGELOG.md

@@ -1,3 +1,10 @@
-# React-iframe demo
+# react-iframe demo
 
-Install dependencies and run demo with `npm start`
+From the repository root:
+
+```bash
+npm install
+npm run demo
+```
+
+Vite serves this folder and aliases `react-iframe` to `../src`.

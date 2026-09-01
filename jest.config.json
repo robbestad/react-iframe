@@ -1,9 +1,0 @@
-{
-  "preset": "ts-jest",
-  "testURL": "http://localhost/",
-  "verbose": true,
-  "testMatch": [
-    "**/**/__tests__/**/*.ts",
-    "**/**/__tests__/**/*.tsx"
-  ]
-}
