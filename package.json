@@ -43,6 +43,7 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"demo": "vite --config demo/vite.config.ts",
+		"demo:build": "vite build --config demo/vite.config.ts",
 		"prepublishOnly": "npm run typecheck && npm test && npm run build"
 	},
 	"repository": {

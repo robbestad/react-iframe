@@ -2,6 +2,7 @@ node_modules
 dist
 coverage
 demo/dist
+.vercel
 demo/node_modules
 .eslintcache
 *.log
