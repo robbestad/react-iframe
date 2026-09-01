@@ -30,6 +30,9 @@
 		"react": ">=18",
 		"react-dom": ">=18"
 	},
+	"overrides": {
+		"esbuild": "^0.28.1"
+	},
 	"scripts": {
 		"build": "tsup",
 		"dev": "tsup --watch",
