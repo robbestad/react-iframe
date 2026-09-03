@@ -1,6 +1,19 @@
 # react-iframe
 
-Zero-dependency typed React wrapper around [`<iframe>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe).
+[![npm version](https://img.shields.io/npm/v/react-iframe.svg)](https://www.npmjs.com/package/react-iframe)
+[![npm downloads](https://img.shields.io/npm/dm/react-iframe.svg)](https://www.npmjs.com/package/react-iframe)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/react-iframe)](https://bundlephobia.com/package/react-iframe)
+[![license](https://img.shields.io/npm/l/react-iframe.svg)](LICENSE)
+
+**Embed anything in React without fighting the native `<iframe>`.**
+
+`react-iframe` is the typed, zero-dependency iframe component for React 18 and 19. Drop in a video, a payment widget, a third-party app, or an inline `srcDoc` document and get a real `HTMLIFrameElement` ref, every native attribute, and `postMessage` helpers that filter by origin and source.
+
+Native iframes work. This package is for the parts that usually do not: TypeScript that matches the platform, `sandbox` as an array (joined, not exploded into characters), `allowFullScreen` that actually updates `allow`, and parent/child messaging without glue code.
+
+Hundreds of thousands of installs every month. Dual ESM/CJS. Nothing else on the dependency tree.
+
+[Live demo](https://react-iframe-vert.vercel.app) · [npm](https://www.npmjs.com/package/react-iframe)
 
 ```bash
 npm install react-iframe
@@ -19,9 +32,18 @@ import Iframe from "react-iframe"
 />
 ```
 
-You do not need this package to render an iframe. Use it when you want TypeScript types, a `ref` to the real `HTMLIFrameElement`, `url` / array `sandbox` / `allowFullScreen` conveniences, or the small `postMessage` helpers.
+## Why this instead of `<iframe />`
 
-Requires **React 18 or 19**.
+| You need                                         | What you get                                                                                          |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| Types that match the DOM                         | Every native iframe attribute, plus `url`, array `sandbox`, and `srcDoc`                              |
+| A ref you can actually use                       | `ref.current` is the `HTMLIFrameElement` (this was broken in 1.x)                                     |
+| Talk to the framed page                          | `useIframeMessage` and `postToIframe` filter by origin and source                                     |
+| Permissions browsers accept                      | `allowFullScreen` prepends `fullscreen` to `allow`; sandbox arrays are space-joined                   |
+| Inline HTML                                      | `srcDoc` for documents you own; message helpers support origin `"null"`                               |
+| A tiny surface area                              | Zero runtime dependencies. Dual ESM/CJS. React 18 and 19                                              |
+
+You do not need this package to render an iframe. Use it when you want TypeScript types, a `ref` to the real `HTMLIFrameElement`, `url` / array `sandbox` / `allowFullScreen` conveniences, or the small `postMessage` helpers.
 
 ## Props
 
